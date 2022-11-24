@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
+import '../../widgets/default_button/default_button.dart';
 import '../../widgets/default_text_field/default_text_field.dart';
 import '../../widgets/form_field/default_form_field.dart';
 import '../signup/view.dart';
@@ -14,6 +15,8 @@ class SignupScreen extends StatelessWidget {
     var _formKey = GlobalKey<FormState>();
     TextEditingController _emailEditingController = TextEditingController();
     TextEditingController _passwordEditingController = TextEditingController();
+    TextEditingController _phonenumberEditingController = TextEditingController();
+    TextEditingController _usernameEditingController = TextEditingController();
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -33,7 +36,7 @@ class SignupScreen extends StatelessWidget {
                   height: 20.0,
                 ),
                 defaultFormField(
-                    controller: _emailEditingController,
+                    controller: _usernameEditingController,
                     type: TextInputType.emailAddress,
                     validate: (value) {
                       if (value!.isEmpty) {
@@ -61,7 +64,7 @@ class SignupScreen extends StatelessWidget {
                   height: 30.0,
                 ),
                 defaultFormField(
-                    controller: _emailEditingController,
+                    controller: _phonenumberEditingController,
                     type: TextInputType.emailAddress,
                     validate: (value) {
                       if (value!.isEmpty) {
@@ -75,11 +78,11 @@ class SignupScreen extends StatelessWidget {
                   height: 30.0,
                 ),
                 defaultFormField(
-                    controller: _emailEditingController,
+                    controller: _passwordEditingController,
                     type: TextInputType.emailAddress,
                     validate: (value) {
                       if (value!.isEmpty) {
-                        return 'Password Is Too Short';
+                        return 'Please enter a Password ';
                       }
                       return null;
                     },
@@ -87,6 +90,20 @@ class SignupScreen extends StatelessWidget {
                     prefix: Icons.lock_person_outlined),
                 const SizedBox(
                   height: 30.0,
+                ),
+                  Padding(
+                  padding: const EdgeInsets.only(bottom: 20.0),
+                  child: defaultButton(
+                      function: () {
+                        if (_formKey.currentState!.validate()) {
+                          
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Processing Data')),
+                          );
+                        }
+                        ;
+                      },
+                      text: 'Register'),
                 ),
                 // defaultFormField(
                 //     controller: _passwordEditingController,

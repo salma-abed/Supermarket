@@ -52,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                     type: TextInputType.text,
                     validate: (value) {
                       if (value!.isEmpty) {
-                        return 'Password Is Too Short';
+                        return 'Please enter your Password';
                       }
                       return null;
                     },
@@ -62,24 +62,18 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(
                   height: 40.0,
                 ),
-                
-                      builder: (context) => defaultButton(
-                          function: () {
-                            if (_formKey.currentState!.validate()) {
-                              
-                            }
-                          },
-                          text: "LOGIN"),
-                      fallback: (context) => Center(
-                        child: CircularProgressIndicator(),
-                      
-                    ),
-                const SizedBox(
-                  height: 20.0,
-                ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom:20.0),
-                  child: defaultButton(function: null, text: 'Login'),
+                  padding: const EdgeInsets.only(bottom: 20.0),
+                  child: defaultButton(
+                      function: () {
+                        if (_formKey.currentState!.validate()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Processing Data')),
+                          );
+                        }
+                        ;
+                      },
+                      text: 'Login'),
                 ),
                 Row(
                   children: [
@@ -91,12 +85,8 @@ class LoginScreen extends StatelessWidget {
                         onPressed: () {
                           navigateTo(context, SignupScreen());
                         },
-                        
                         child: defaultTextField(
-                            size: 14.0,
-                            text: 'Signup',
-                            color: kPrimaryColor)),
-                            
+                            size: 14.0, text: 'Signup', color: kPrimaryColor)),
                   ],
                 ),
               ],
