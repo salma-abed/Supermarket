@@ -15,7 +15,8 @@ class SignupScreen extends StatelessWidget {
     var _formKey = GlobalKey<FormState>();
     TextEditingController _emailEditingController = TextEditingController();
     TextEditingController _passwordEditingController = TextEditingController();
-    TextEditingController _phonenumberEditingController = TextEditingController();
+    TextEditingController _phonenumberEditingController =
+        TextEditingController();
     TextEditingController _usernameEditingController = TextEditingController();
     return Scaffold(
       body: SingleChildScrollView(
@@ -91,12 +92,11 @@ class SignupScreen extends StatelessWidget {
                 const SizedBox(
                   height: 30.0,
                 ),
-                  Padding(
+                Padding(
                   padding: const EdgeInsets.only(bottom: 20.0),
                   child: defaultButton(
                       function: () {
                         if (_formKey.currentState!.validate()) {
-                          
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('Processing Data')),
                           );
