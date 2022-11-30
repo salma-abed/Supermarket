@@ -1,4 +1,5 @@
 // ignore: import_of_legacy_library_into_null_safe
+import 'package:application/screens/dashboard/dashboard_layout.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
@@ -69,7 +70,9 @@ class LoginScreen extends StatelessWidget {
                         if (_formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(content: Text('Processing Data')),
+                          
                           );
+                          navigateTo(context, DashBoardLayout());
                         }
                         ;
                       },

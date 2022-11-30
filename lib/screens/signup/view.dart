@@ -19,6 +19,7 @@ class SignupScreen extends StatelessWidget {
         TextEditingController();
     TextEditingController _usernameEditingController = TextEditingController();
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
