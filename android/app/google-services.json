@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "324796491846",
+    "project_id": "market-3fa32",
+    "storage_bucket": "market-3fa32.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:324796491846:android:7eb88115e3da9942504247",
+        "android_client_info": {
+          "package_name": "com.Market.Sofa_Market"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "324796491846-eel6jg6n3dtcclt3aft5d30b1q4m7ku6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Market.Sofa_Market",
+            "certificate_hash": "da43c933bd46aa70a5941899248640184885c4e8"
+          }
+        },
+        {
+          "client_id": "324796491846-6ouob4deilqpj32kgojp774idj6ctra1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeTewdM73Ver_p76TIOgxA8CMleO43urQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "324796491846-6ouob4deilqpj32kgojp774idj6ctra1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
