@@ -40,46 +40,18 @@ class _ItemState extends State<Item> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'Butchery',
+                          'Marinated',
                           style: TextStyle(
                             fontSize: 30,
                           ),
                         ),
                         CircleAvatar(
                           backgroundImage: AssetImage(
-                            'images/butchery.jpeg',
+                            'images/marinated.jpg',
                           ),
                           radius: 92,
                         ),
                       ]),
-                ),
-                Container(
-                  height: 150,
-                  margin: EdgeInsets.all(20),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Color(0xffe0fbfc).withOpacity(0.55),
-                      border: Border.all(
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: AssetImage(
-                          'images/FruitsAndVegatables.jpeg',
-                        ),
-                        radius: 70,
-                      ),
-                      Text(
-                        'Fruits And Vegatables',
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          fontSize: 18,
-                        ),
-                      )
-                    ],
-                  ),
                 ),
                 Container(
                   height: 150,
@@ -95,14 +67,14 @@ class _ItemState extends State<Item> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        'Bakery',
+                        'Cubes & Strips',
                         style: TextStyle(
                           fontSize: 35,
                         ),
                       ),
                       CircleAvatar(
                         backgroundImage: AssetImage(
-                          'images/Bakery.jpeg',
+                          'images/cubesandcuts.jpg',
                         ),
                         radius: 92,
                       ),
@@ -122,17 +94,129 @@ class _ItemState extends State<Item> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
+                      Text(
+                        'Fillets',
+                        style: TextStyle(
+                          fontSize: 35,
+                        ),
+                      ),
                       CircleAvatar(
                         backgroundImage: AssetImage(
-                          'images/DairyProducts.jpeg',
+                          'images/filletsmeat.jpg',
                         ),
-                        radius: 70,
+                        radius: 92,
                       ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 150,
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Color(0xffe0fbfc).withOpacity(0.55),
+                      border: Border.all(
+                        color: Color.fromARGB(0, 188, 230, 247),
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
                       Text(
-                        'Dairy Products',
+                        'Wholecuts',
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 35,
                         ),
+                      ),
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                          'images/wholecuts.jpg',
+                        ),
+                        radius: 92,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 150,
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Color(0xffe0fbfc).withOpacity(0.55),
+                      border: Border.all(
+                        color: Color.fromARGB(0, 188, 230, 247),
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'Burgers & Susges',
+                        style: TextStyle(
+                          fontSize: 35,
+                        ),
+                      ),
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                          'images/burgersandsusges.jpg',
+                        ),
+                        radius: 92,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 150,
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Color(0xffe0fbfc).withOpacity(0.55),
+                      border: Border.all(
+                        color: Color.fromARGB(0, 188, 230, 247),
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'Wings & Drums',
+                        style: TextStyle(
+                          fontSize: 35,
+                        ),
+                      ),
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                          'images/wingsanddrums.jpg',
+                        ),
+                        radius: 92,
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 150,
+                  margin: EdgeInsets.all(20),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Color(0xffe0fbfc).withOpacity(0.55),
+                      border: Border.all(
+                        color: Color.fromARGB(0, 188, 230, 247),
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'Frozen',
+                        style: TextStyle(
+                          fontSize: 35,
+                        ),
+                      ),
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                          'frozen.jpg',
+                        ),
+                        radius: 92,
                       ),
                     ],
                   ),
