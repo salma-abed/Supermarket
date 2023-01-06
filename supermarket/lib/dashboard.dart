@@ -4,10 +4,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:mobileproject/categries.dart';
+import 'package:mobileproject/widget/input.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({super.key});
-  
+
   @override
   State<DashBoard> createState() => _DashBoardState();
 }
@@ -26,10 +28,11 @@ class _DashBoardState extends State<DashBoard> {
           body: ListView(children: [
             Column(
               children: [
-                Container(
-                  height: 150,
-                  margin: EdgeInsets.all(20),
-                  padding: EdgeInsets.all(10),
+                inputs(height:150,
+                margin : 20,
+                padding: 10,
+                text:"butchery",
+                padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       color: Color(0xffe0fbfc).withOpacity(0.55),
                       border: Border.all(
@@ -37,22 +40,23 @@ class _DashBoardState extends State<DashBoard> {
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'Butchery',
-                          style: TextStyle(
-                            fontSize: 30,
-                          ),
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: AssetImage(
+                          'images/FruitsAndVegatables.jpeg',
                         ),
-                        CircleAvatar(
-                          backgroundImage: AssetImage(
-                            'images/butchery.jpeg',
-                          ),
-                          radius: 92,
+                        radius: 70,
+                      ),
+                      Text(
+                        'Fruits And Vegatables',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 18,
                         ),
-                      ]),
-                ),
+                      )
+                    ],
+                  ),),
                 Container(
                   height: 150,
                   margin: EdgeInsets.all(20),
