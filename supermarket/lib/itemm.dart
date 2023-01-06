@@ -33,7 +33,7 @@ class _ItemState extends State<Item> {
                   decoration: BoxDecoration(
                       color: Color(0xffe0fbfc).withOpacity(0.55),
                       border: Border.all(
-                        color: Colors.transparent,
+                        color: Color.fromARGB(0, 188, 230, 247),
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   child: Row(
@@ -60,7 +60,6 @@ class _ItemState extends State<Item> {
                   decoration: BoxDecoration(
                       color: Color(0xffe0fbfc).withOpacity(0.55),
                       border: Border.all(
-                        color: Colors.transparent,
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   child: Row(
@@ -89,7 +88,7 @@ class _ItemState extends State<Item> {
                   decoration: BoxDecoration(
                       color: Color(0xffe0fbfc).withOpacity(0.55),
                       border: Border.all(
-                        color: Colors.transparent,
+                        color: Color.fromARGB(0, 188, 230, 247),
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   child: Row(
@@ -117,7 +116,7 @@ class _ItemState extends State<Item> {
                   decoration: BoxDecoration(
                       color: Color(0xffe0fbfc).withOpacity(0.55),
                       border: Border.all(
-                        color: Colors.transparent,
+                        color: Color.fromARGB(0, 188, 230, 247),
                       ),
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   child: Row(

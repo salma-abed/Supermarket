@@ -1,18 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
+class Items extends StatefulWidget {
+  const Items({super.key});
+  
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'SuperMarket', 
-      home: HomePage(),  
-    );
-  }
+  State<Items> createState() => _ItemsState();
 }
 
-class HomePage extends StatelessWidget {
+class _ItemsState extends State<Items> {
 
   @override
 
@@ -22,7 +20,7 @@ class HomePage extends StatelessWidget {
 
       appBar: AppBar(
 
-         title: Text('SuperMarket'), //title of the app bar 
+         title: Text('Sofa Market'), //title of the app bar 
 
       ),
 
@@ -34,13 +32,13 @@ class HomePage extends StatelessWidget {
 
              Container( //container widget for displaying items in the supermarket 
 
-               height: 200, //height of the container widget 
+               height: 300, //height of the container widget 
 
-               width: 400, //width of the container widget 
+               width: 500, //width of the container widget 
 
                decoration: BoxDecoration( //decoration for the container widget to give it a nice look and feel 
 
-                 color: Colors.blue, //color of the container widget  
+                 color: Color.fromARGB(0, 188, 230, 247), //color of the container widget  
 
                  borderRadius: BorderRadius.circular(20), //border radius for the container widget to give it a nice look and feel  
 
