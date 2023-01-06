@@ -132,7 +132,7 @@ class _CategoryState extends State<Category> {
                         backgroundImage: AssetImage(
                           'images/wholecuts.jpg',
                         ),
-                        radius: 92,
+                        radius: 65,
                       ),
                     ],
                   ),
