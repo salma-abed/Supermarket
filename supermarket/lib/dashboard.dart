@@ -32,7 +32,7 @@ class _DashBoardState extends State<DashBoard> {
                 margin : 20,
                 padding: 10,
                 text:"butchery",
-                fontSize: 18,
+                fontSize: 30,
                 img: AssetImage(
                           'images/butchery.jpeg',
                         ),

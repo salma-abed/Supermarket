@@ -69,14 +69,14 @@ class _CategoryState extends State<Category> {
                       Text(
                         'Cubes & Strips',
                         style: TextStyle(
-                          fontSize: 35,
+                          fontSize: 20,
                         ),
                       ),
                       CircleAvatar(
                         backgroundImage: AssetImage(
                           'images/cubesandcuts.jpg',
                         ),
-                        radius: 92,
+                        radius: 65,
                       ),
                     ],
                   ),
@@ -95,7 +95,7 @@ class _CategoryState extends State<Category> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        'Fillets',
+                        ' Fillets  ',
                         style: TextStyle(
                           fontSize: 35,
                         ),
@@ -104,7 +104,7 @@ class _CategoryState extends State<Category> {
                         backgroundImage: AssetImage(
                           'images/filletsmeat.jpg',
                         ),
-                        radius: 92,
+                        radius: 102,
                       ),
                     ],
                   ),
