@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
-class Item extends StatefulWidget {
-  const Item({super.key});
+class Category extends StatefulWidget {
+  const Category({super.key});
   
   @override
-  State<Item> createState() => _ItemState();
+  State<Category> createState() => _CategoryState();
 }
 
-class _ItemState extends State<Item> {
+class _CategoryState extends State<Category> {
   @override
   Widget build(BuildContext context) {
     return Container(
