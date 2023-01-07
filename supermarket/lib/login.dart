@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -27,22 +28,39 @@ class _LoginPageState extends State<LoginPage> {
           Container(
                   alignment: Alignment.center,
                   child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {context.go("/DashBoard");},
                       child: Container(
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
-                              color: Colors.grey.withOpacity(0.30)),
+                              color: Colors.transparent),
                           width: 100,
                           height: 45,
-                          child: const Text("Done",
+                          child: const Text("LogIn",
                               style: TextStyle(
                                   color: Color(0xFF191C32),
                                   fontFamily: 'Poppins',
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500)))),
                 ),
-
+Container(
+                  alignment: Alignment.center,
+                  child: GestureDetector(
+                      onTap: () {context.go("/Signup");},
+                      child: Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.transparent),
+                          width: 100,
+                          height: 45,
+                          child: const Text("Signup",
+                              style: TextStyle(
+                                  color: Color(0xFF191C32),
+                                  fontFamily: 'Poppins',
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500)))),
+                ),
         ]), 
 
       ), 

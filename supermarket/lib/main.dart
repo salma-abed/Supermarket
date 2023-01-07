@@ -12,7 +12,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  //await Pref.init();
 
   runApp(ProviderScope(child: MyApp()));
 }
@@ -21,7 +20,7 @@ class MyApp extends ConsumerWidget {
   final _router = GoRouter(routes: [
     GoRoute(path: "/", builder: (context, state) => LoginPage(), routes: [
       GoRoute(
-        path: "login",
+        path: "DashBoard",
         builder: (context, state) => const DashBoard(),
       ),
       GoRoute(
