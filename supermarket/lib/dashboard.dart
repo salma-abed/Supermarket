@@ -41,42 +41,24 @@ class _DashBoardState extends State<DashBoard> {
                 inputs(height:150,
                 margin : 20,
                 padding: 10,
-                text:"Fruits And Vegatables",
+                text:"Fruits & Vegatables",
                 fontSize: 30,
                 img: AssetImage(
                           'images/FruitsAndVegatables.jpeg',
                         ),
                 radius: 70,
                 ),
-                
-                Container(
-                  height: 150,
-                  margin: EdgeInsets.all(20),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Color(0xffe0fbfc).withOpacity(0.55),
-                      border: Border.all(
-                        color: Colors.transparent,
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(30))),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        'Bakery',
-                        style: TextStyle(
-                          fontSize: 35,
-                        ),
-                      ),
-                      CircleAvatar(
-                        backgroundImage: AssetImage(
+                inputs(height:150,
+                margin : 20,
+                padding: 10,
+                text:"Bakery",
+                fontSize: 30,
+                img: AssetImage(
                           'images/Bakery.jpeg',
                         ),
-                        radius: 92,
-                      ),
-                    ],
-                  ),
+                radius: 70,
                 ),
+                
                 Container(
                   height: 150,
                   margin: EdgeInsets.all(20),
