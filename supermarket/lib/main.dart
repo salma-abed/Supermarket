@@ -35,8 +35,8 @@ class MyApp extends ConsumerWidget {
   ]);
   MyApp({super.key});
 
-  // This widget is the root of your application
-  bool dark = true;
+
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
@@ -44,6 +44,7 @@ class MyApp extends ConsumerWidget {
       routeInformationParser: _router.routeInformationParser,
       routerDelegate: _router.routerDelegate,
       routeInformationProvider: _router.routeInformationProvider,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
