@@ -9,9 +9,9 @@ class _SignupPageState extends State<SignupPage> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  String _name;
-  String _email;
-  String _password;
+  String? _name;
+  String? _email;
+  String? _password;
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +23,33 @@ class _SignupPageState extends State<SignupPage> {
 
           //Name Field.  
 
-          TextFormField(decoration: InputDecoration(labelText:'Name'), validator:(String value){if (value.isEmpty) {return 'Please enter your name';}}, onSaved:(String value){_name = value;}),
+          TextFormField(decoration: InputDecoration(labelText:'Name')),
 
           //Email Field.  
 
-          TextFormField(decoration: InputDecoration(labelText:'Email'), validator:(String value){if (value.isEmpty) {return 'Please enter your email';}}, onSaved:(String value){_email = value;}),
+          TextFormField(decoration: InputDecoration(labelText:'Email'),),
 
           //Password Field.  
 
-          TextFormField(obscureText: true, decoration: InputDecoration(labelText:'Password'), validator:(String value){if (value.isEmpty) {return 'Please enter a password';}}, onSaved:(String value){_password = value;}),
 
-          RaisedButton(onPressed: (){if(_formKey.currentState.validate()){_formKey.currentState.save();}} , child : Text('Submit'))], ), ) ); } }
+          TextFormField(obscureText: true, decoration: InputDecoration(labelText:'Password')),
+
+          Container(
+                  alignment: Alignment.center,
+                  child: GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.grey.withOpacity(0.30)),
+                          width: 100,
+                          height: 45,
+                          child: const Text("Done",
+                              style: TextStyle(
+                                  color: Color(0xFF191C32),
+                                  fontFamily: 'Poppins',
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500)))),
+                ),], ), ) ); } }
+                          //TextFormField(obscureText: true, decoration: InputDecoration(labelText:'Password'), validator:(String value){if (value.isEmpty) {return 'Please enter a password';}}, onSaved:(String value){_password = value;}),

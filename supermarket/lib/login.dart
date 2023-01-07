@@ -24,7 +24,24 @@ class _LoginPageState extends State<LoginPage> {
 
           SizedBox(height: 8.0), // Add some space between fields.
 
-          RaisedButton(onPressed: () {}, child : Text('LOGIN'))
+          Container(
+                  alignment: Alignment.center,
+                  child: GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.grey.withOpacity(0.30)),
+                          width: 100,
+                          height: 45,
+                          child: const Text("Done",
+                              style: TextStyle(
+                                  color: Color(0xFF191C32),
+                                  fontFamily: 'Poppins',
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500)))),
+                ),
 
         ]), 
 

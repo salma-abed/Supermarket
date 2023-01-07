@@ -7,8 +7,8 @@ class CheckoutPage extends StatefulWidget {
 
 class _CheckoutPageState extends State<CheckoutPage> {
 
-  String _name;
-  String _address;
+  String? _name;
+  String? _address;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,24 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
             Padding (padding :EdgeInsets.all (10)),
 
-            RaisedButton (onPressed : (){}, child : Text('Submit')) ,   // Submit button to place order after entering the details.   								     // This can be modified to add order confirmation page in future.    
+            Container(
+                  alignment: Alignment.center,
+                  child: GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.grey.withOpacity(0.30)),
+                          width: 100,
+                          height: 45,
+                          child: const Text("Done",
+                              style: TextStyle(
+                                  color: Color(0xFF191C32),
+                                  fontFamily: 'Poppins',
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500)))),
+                ),   // Submit button to place order after entering the details.   								     // This can be modified to add order confirmation page in future.    
 
           ],   // End of widget list for Column class.   
 
