@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SignupPage extends StatefulWidget {
   @override
@@ -7,7 +8,7 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   String? _name;
   String? _email;
@@ -16,7 +17,6 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sign Up')),
       body: Container(
         decoration: BoxDecoration(
     image: DecorationImage(
@@ -25,39 +25,138 @@ class _SignupPageState extends State<SignupPage> {
   ),
         child: Form(
           key: _formKey,
-          
-          child: Column(children: <Widget>[
-
-            //Name Field.  
-
-            TextFormField(decoration: InputDecoration(labelText:'Name')),
-
-            //Email Field.  
-
-            TextFormField(decoration: InputDecoration(labelText:'Email'),),
-
-            //Password Field.  
-
-
-            TextFormField(obscureText: true, decoration: InputDecoration(labelText:'Password')),
-
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+            Container(
+              margin:EdgeInsets.only(left:20,right:20),
+              decoration:BoxDecoration(
+                color:Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Name',
+                    hintStyle: TextStyle(fontWeight: FontWeight.w700),
+                    contentPadding: EdgeInsets.only(left:10),
+                    focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
+                    borderSide:BorderSide( color: Colors.transparent) ,
+                    )
+                    ),
+                    )
+                    ),
+            Container(
+              margin:EdgeInsets.only(left:20,right:20),
+              decoration:BoxDecoration(
+                color:Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'E-mail',
+                    hintStyle: TextStyle(fontWeight: FontWeight.w700),
+                    contentPadding: EdgeInsets.only(left:10),
+                    focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
+                    borderSide:BorderSide( color: Colors.transparent) ,
+                    )
+                    ),
+                    )
+                    ),
+                    Container(
+              margin:EdgeInsets.only(left:20,right:20),
+              decoration:BoxDecoration(
+                color:Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Phone Number',
+                    hintStyle: TextStyle(fontWeight: FontWeight.w700),
+                    contentPadding: EdgeInsets.only(left:10),
+                    focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
+                    borderSide:BorderSide( color: Colors.transparent) ,
+                    )
+                    ),
+                    )
+                    ),
+                    Container(
+              margin:EdgeInsets.only(left:20,right:20),
+              decoration:BoxDecoration(
+                color:Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Address',
+                    hintStyle: TextStyle(fontWeight: FontWeight.w700),
+                    contentPadding: EdgeInsets.only(left:10),
+                    focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
+                    borderSide:BorderSide( color: Colors.transparent) ,
+                    )
+                    ),
+                    )
+                    ),
+Container(
+              margin:EdgeInsets.only(left:20,right:20),
+              decoration:BoxDecoration(
+                color:Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                ),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText:'Password',
+                  hintStyle: TextStyle(fontWeight:FontWeight.w700),
+                  contentPadding: EdgeInsets.only(left:10),
+                  focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(color: Colors.transparent),
+                  ),
+              ),
+              ),
+            ),
+            Container(
+              margin:EdgeInsets.only(left:20,right:20),
+              decoration:BoxDecoration(
+                color:Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                ),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText:'Confrim Password',
+                  hintStyle: TextStyle(fontWeight:FontWeight.w700),
+                  contentPadding: EdgeInsets.only(left:10),
+                  focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(color: Colors.transparent),
+                  ),
+              ),
+              ),
+            ),
             Container(
                     alignment: Alignment.center,
                     child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {context.go("/DashBoard");},
                         child: Container(
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
-                                color: Colors.grey.withOpacity(0.30)),
+                                color: Colors.white),
                             width: 100,
                             height: 45,
-                            child: const Text("Done",
+                            child: const Text("Sign-Up",
                                 style: TextStyle(
                                     color: Color(0xFF191C32),
-                                    fontFamily: 'Poppins',
                                     fontSize: 20,
-                                    fontWeight: FontWeight.w500)))),
-                  ),], ), ),
-      ) ); } }
+                                    fontWeight: FontWeight.w500)
+                                    )
+                                    )
+                                    ),
+                  ),
+                  ],
+                  ),
+                  ),
+      )
+      );
+      }
+      }
                           //TextFormField(obscureText: true, decoration: InputDecoration(labelText:'Password'), validator:(String value){if (value.isEmpty) {return 'Please enter a password';}}, onSaved:(String value){_password = value;}),
