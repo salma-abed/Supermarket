@@ -3,20 +3,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mobileproject/categries.dart';
-import 'package:mobileproject/dashboard.dart';
-import 'package:mobileproject/loading.dart';
-import 'package:mobileproject/login.dart';
-import 'package:mobileproject/signup.dart';
+import 'package:mobileproject/screens/categries.dart';
+import 'package:mobileproject/screens/dashboard.dart';
+import 'package:mobileproject/screens/loading.dart';
+import 'package:mobileproject/screens/login.dart';
+import 'package:mobileproject/screens/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-await Firebase.initializeApp(
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
   runApp(ProviderScope(child: MyApp()));
 }
 
@@ -38,8 +38,6 @@ class MyApp extends ConsumerWidget {
     ]),
   ]);
   MyApp({super.key});
-
-
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -42,6 +42,7 @@ dependencies:
   flutter_riverpod: ^2.1.3
   go_router: ^6.0.1
   shared_preferences: ^2.0.15
+  no_glow_scroll: ^0.0.2
 
 dev_dependencies:
   flutter_test:
