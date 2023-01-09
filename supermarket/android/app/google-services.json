@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "299348089251",
+    "project_id": "sofa-market",
+    "storage_bucket": "sofa-market.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299348089251:android:d6fc49aadf7ca78ead2216",
+        "android_client_info": {
+          "package_name": "com.SofaMarket.SofaMarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299348089251-dpftnev9klm0gnaaed45tvs1gou5mk16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUxmkwLiBmiD5B5tv8_qzyroyjQyIN6hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299348089251-dpftnev9klm0gnaaed45tvs1gou5mk16.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
