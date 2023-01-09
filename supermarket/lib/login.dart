@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     )
                     ),
-            SizedBox(height: 8.0), // Add some space between fields. 
+            SizedBox(height: 8.0), 
             Container(
               margin:EdgeInsets.only(left:20,right:20),
               decoration:BoxDecoration(
@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               ),
             ),
-            SizedBox(height: 20.0), // Add some space between fields.
+            SizedBox(height: 20.0), 
             Container(
                     alignment: Alignment.center,
                     child: GestureDetector(
@@ -106,24 +106,34 @@ class _LoginPageState extends State<LoginPage> {
                     alignment: Alignment.center,
                     child: GestureDetector(
                         onTap: () {context.go("/Signup");},
-                        child: Container(
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Colors.white),
-                            width: 100,
-                            height: 45,
-                            child: const Text("SignUp",
-                                style: TextStyle(
-                                    color: Color(0xFF191C32),
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w500)))),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                    'Don\'t have an account?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20,
+                      color: Color(0xffee6c4d),
+                    ),
+                  ),
+                            Container(
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),),
+                                width: 100,
+                                height: 45,
+                                child: const Text("SignUp",
+                                    style: TextStyle(
+                                        color: Color(0xFF191C32),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500))),
+                          ],
+                        )),
                   ),
           ]), 
-
         ),
       ), 
-
     );  
 
   }  
