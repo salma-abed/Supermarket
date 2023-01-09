@@ -96,7 +96,7 @@ final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
                     ),
                     )
                     ),
-            Container(
+Container(
               margin:EdgeInsets.only(left:20,right:20),
               decoration:BoxDecoration(
                 color:Colors.white,
@@ -139,24 +139,24 @@ final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
                         child: Container(
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.white),
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.white),
                             width: 100,
                             height: 45,
                             child: const Text("Sign-Up",
                                 style: TextStyle(
-                                color: Color(0xFF191C32),
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500),
-                                )
-                                )
-                            ),
+                                    color: Color(0xFF191C32),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.w500)
+                                    )
+                                    )
+                                    ),
                   ),
-                ],
-              ),
-            ),
+                  ],
+                  ),
+                  ),
       )
       );
       }
       }
-
+                          //TextFormField(obscureText: true, decoration: InputDecoration(labelText:'Password'), validator:(String value){if (value.isEmpty) {return 'Please enter a password';}}, onSaved:(String value){_password = value;}),

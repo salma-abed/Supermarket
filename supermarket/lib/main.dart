@@ -42,7 +42,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp.router(
-      title: 'Sofa MArket',
+      title: 'Flutter Demo',
       routeInformationParser: _router.routeInformationParser,
       routerDelegate: _router.routerDelegate,
       routeInformationProvider: _router.routeInformationProvider,
