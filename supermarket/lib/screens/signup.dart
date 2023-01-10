@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -191,7 +192,16 @@ class _SignupPageState extends State<SignupPage> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Processing Data')),
                       );
-                      context.go("/DashBoard");
+                      FirebaseAuth.instance
+                          .createUserWithEmailAndPassword(
+                              email: _emailEditingController.text,
+                              password: _passwordEditingController.text)
+                          .then((value) {
+                        print('New Account is created');
+                        context.go('/DashBoard');
+                      }).onError((error, stackTrace) {
+                        print('Error ${error.toString()}');
+                      });
                     }
                     ;
                   },

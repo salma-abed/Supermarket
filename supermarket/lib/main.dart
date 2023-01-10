@@ -22,7 +22,7 @@ void main() async {
 
 class MyApp extends ConsumerWidget {
   final _router = GoRouter(routes: [
-    GoRoute(path: "/", builder: (context, state) => LoginPage(), routes: [
+    GoRoute(path: '/', builder: (context, state) => LoginPage(), routes: [
       GoRoute(
         path: "DashBoard",
         builder: (context, state) => const DashBoard(),
