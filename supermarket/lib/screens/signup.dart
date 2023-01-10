@@ -15,6 +15,7 @@ class _SignupPageState extends State<SignupPage> {
   TextEditingController _passwordEditingController = TextEditingController();
   TextEditingController _phonenumberEditingController = TextEditingController();
   TextEditingController _nameEditingController = TextEditingController();
+  TextEditingController _confirmPasswordEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,7 @@ class _SignupPageState extends State<SignupPage> {
             image: AssetImage('images/background/background5.jpg'),
             fit: BoxFit.fill),
       ),
+      
       child: Form(
         key: _formKey,
         child: Column(
@@ -139,7 +141,7 @@ class _SignupPageState extends State<SignupPage> {
                     }
                     return null;
                   },
-                  controller: _emailEditingController,
+                  controller: _passwordEditingController,
                   isPassword: true,
                   type: TextInputType.name,
                   prefix: Icons.lock,
@@ -160,11 +162,11 @@ class _SignupPageState extends State<SignupPage> {
               child: defaultFormField(
                   validate: (value) {
                     if (value!.isEmpty) {
-                      return 'Please Enter Your Username';
+                      return 'Please Re-enter your password';
                     }
                     return null;
                   },
-                  controller: _emailEditingController,
+                  controller: _confirmPasswordEditingController,
                   isPassword: true,
                   type: TextInputType.name,
                   prefix: Icons.lock,
@@ -207,4 +209,3 @@ class _SignupPageState extends State<SignupPage> {
     ));
   }
 }
-                          //TextFormField(obscureText: true, decoration: InputDecoration(labelText:'Password'), validator:(String value){if (value.isEmpty) {return 'Please enter a password';}}, onSaved:(String value){_password = value;}),
