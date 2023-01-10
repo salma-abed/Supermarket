@@ -14,11 +14,7 @@ class _SignupPageState extends State<SignupPage> {
   TextEditingController _emailEditingController = TextEditingController();
   TextEditingController _passwordEditingController = TextEditingController();
   TextEditingController _phonenumberEditingController = TextEditingController();
-  TextEditingController _usernameEditingController = TextEditingController();
   TextEditingController _nameEditingController = TextEditingController();
-  // String? _name;
-  // String? _email;
-  // String? _password;
 
   @override
   Widget build(BuildContext context) {
@@ -64,66 +60,96 @@ class _SignupPageState extends State<SignupPage> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: 'E-mail',
-                      hintStyle: TextStyle(fontWeight: FontWeight.w700),
-                      contentPadding: EdgeInsets.only(left: 10),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.transparent),
-                      )),
-                )),
+                child:  defaultFormField(
+                  validate: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please Enter a valid e-mail';
+                    }
+                    return null;
+                  },
+                  controller: _emailEditingController,
+                  type: TextInputType.name,
+                  prefix: Icons.email,
+                  hint: 'E-mail',
+                  hintstyle: TextStyle(fontWeight: FontWeight.w700),
+                  contentpadding: EdgeInsets.only(left: 10),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.transparent),
+                  )),
+                ),
             Container(
                 margin: EdgeInsets.only(left: 20, right: 20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: 'Phone Number',
-                      hintStyle: TextStyle(fontWeight: FontWeight.w700),
-                      contentPadding: EdgeInsets.only(left: 10),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.transparent),
-                      )),
-                )),
+                child: defaultFormField(
+                  validate: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please a phone number';
+                    }
+                    return null;
+                  },
+                  controller: _phonenumberEditingController,
+                  type: TextInputType.name,
+                  prefix: Icons.phone,
+                  hint: 'Phone Number ',
+                  hintstyle: TextStyle(fontWeight: FontWeight.w700),
+                  contentpadding: EdgeInsets.only(left: 10),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.transparent),
+                  )),
+                ),
             Container(
                 margin: EdgeInsets.only(left: 20, right: 20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: 'Address',
-                      hintStyle: TextStyle(fontWeight: FontWeight.w700),
-                      contentPadding: EdgeInsets.only(left: 10),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.transparent),
-                      )),
-                )),
+                child: 
+                defaultFormField(
+                  validate: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please Enter Your Address';
+                    }
+                    return null;
+                  },
+                  controller: _nameEditingController,
+                  type: TextInputType.name,
+                  prefix: Icons.home,
+                  hint: 'Address',
+                  hintstyle: TextStyle(fontWeight: FontWeight.w700),
+                  contentpadding: EdgeInsets.only(left: 10),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.transparent),
+                  )),
+                ),
             Container(
               margin: EdgeInsets.only(left: 20, right: 20),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Password',
-                  hintStyle: TextStyle(fontWeight: FontWeight.w700),
-                  contentPadding: EdgeInsets.only(left: 10),
+              child: defaultFormField(
+                  validate: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please Enter a password';
+                    }
+                    return null;
+                  },
+                  controller: _passwordEditingController,
+                  type: TextInputType.name,
+                  prefix: Icons.lock,
+                  hint: 'Password',
+                  hintstyle: TextStyle(fontWeight: FontWeight.w700),
+                  contentpadding: EdgeInsets.only(left: 10),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(color: Colors.transparent),
-                  ),
-                ),
-              ),
+                  )),
             ),
             Container(
               margin: EdgeInsets.only(left: 20, right: 20),
@@ -131,18 +157,24 @@ class _SignupPageState extends State<SignupPage> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Confrim Password',
-                  hintStyle: TextStyle(fontWeight: FontWeight.w700),
-                  contentPadding: EdgeInsets.only(left: 10),
+              child: 
+              defaultFormField(
+                  validate: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please Enter Your Username';
+                    }
+                    return null;
+                  },
+                  controller: _emailEditingController,
+                  type: TextInputType.name,
+                  prefix: Icons.lock,
+                  hint: 'Confirm Password',
+                  hintstyle: TextStyle(fontWeight: FontWeight.w700),
+                  contentpadding: EdgeInsets.only(left: 10),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(color: Colors.transparent),
-                  ),
-                ),
-              ),
+                  )),
             ),
             Container(
               alignment: Alignment.center,
