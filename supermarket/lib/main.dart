@@ -48,8 +48,5 @@ class MyApp extends ConsumerWidget {
       routeInformationProvider: _router.routeInformationProvider,
       debugShowCheckedModeBanner: false,
     );
-    
   }
-  
 }
-
