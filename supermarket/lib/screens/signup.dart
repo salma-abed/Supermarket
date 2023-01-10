@@ -144,6 +144,17 @@ class _SignupPageState extends State<SignupPage> {
                   validate: (value) {
                     if (value!.isEmpty) {
                       return 'Please Enter your Password';
+                    } else if (value.length < 8) {
+                      return 'The password contain at least 8 characters';
+                    } else if (!RegExp(r'[A-Z]').hasMatch(value)) {
+                      return 'The password contain uppercase letter';
+                    } else if (!RegExp(r'[0-9]').hasMatch(value)) {
+                      return 'The password contain number';
+                    } else if (!RegExp(r'[a-z]').hasMatch(value)) {
+                      return 'The password contain lowercase letter';
+                    } else if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]')
+                        .hasMatch(value)) {
+                      return 'The password contain special symbol';
                     }
                     return null;
                   },
