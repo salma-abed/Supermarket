@@ -8,11 +8,15 @@ Widget defaultFormField({
   void Function()? onTap,
   bool isPassword = false,
   required String? Function(String?)? validate,
-  required String? label,
+  String? label,
   IconData? prefix,
   IconData? suffix,
   void Function()? suffixPressed,
   bool isClickable = true,
+  required String hint,
+  hintstyle,
+  contentpadding,
+  focusedBorder,
 }) =>
     TextFormField(
       controller: controller,
@@ -25,6 +29,13 @@ Widget defaultFormField({
       validator: validate,
       decoration: InputDecoration(
         labelText: label,
+        hintText: hint,
+        hintStyle: hintstyle,
+        contentPadding: EdgeInsets.only(left: 10),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.transparent),
+        ),
         prefixIcon: Icon(
           prefix,
         ),

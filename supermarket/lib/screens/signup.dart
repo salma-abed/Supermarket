@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../widgets/default_form_field.dart';
+
 class SignupPage extends StatefulWidget {
   @override
   _SignupPageState createState() => _SignupPageState();
@@ -13,6 +15,7 @@ class _SignupPageState extends State<SignupPage> {
   TextEditingController _passwordEditingController = TextEditingController();
   TextEditingController _phonenumberEditingController = TextEditingController();
   TextEditingController _usernameEditingController = TextEditingController();
+  TextEditingController _nameEditingController = TextEditingController();
   // String? _name;
   // String? _email;
   // String? _password;
@@ -32,21 +35,28 @@ class _SignupPageState extends State<SignupPage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-                margin: EdgeInsets.only(left: 20, right: 20),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: 'Name',
-                      hintStyle: TextStyle(fontWeight: FontWeight.w700),
-                      contentPadding: EdgeInsets.only(left: 10),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: Colors.transparent),
-                      )),
-                )),
+              margin: EdgeInsets.only(left: 20, right: 20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: defaultFormField(
+                  validate: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please Enter Your Username';
+                    }
+                    return null;
+                  },
+                  controller: _nameEditingController,
+                  type: TextInputType.name,
+                  hint: 'Name',
+                  hintstyle: TextStyle(fontWeight: FontWeight.w700),
+                  contentpadding: EdgeInsets.only(left: 10),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.transparent),
+                  )),
+            ),
             Container(
                 margin: EdgeInsets.only(left: 20, right: 20),
                 decoration: BoxDecoration(
