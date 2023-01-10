@@ -6,7 +6,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:mobileproject/screens/categries.dart';
 import 'package:mobileproject/screens/loading.dart';
-import 'package:mobileproject/widget/input.dart';
+import 'package:mobileproject/widgets/input.dart';
 import 'package:no_glow_scroll/no_glow_scroll.dart';
 
 class DashBoard extends StatefulWidget {
