@@ -141,6 +141,7 @@ class _SignupPageState extends State<SignupPage> {
                     return null;
                   },
                   controller: _passwordEditingController,
+                  isPassword: true,
                   type: TextInputType.name,
                   prefix: Icons.lock,
                   hint: 'Password',
@@ -166,6 +167,7 @@ class _SignupPageState extends State<SignupPage> {
                     return null;
                   },
                   controller: _emailEditingController,
+                  isPassword: true,
                   type: TextInputType.name,
                   prefix: Icons.lock,
                   hint: 'Confirm Password',
