@@ -55,12 +55,12 @@ class _SignupPageState extends State<SignupPage> {
                   )),
             ),
             Container(
-                margin: EdgeInsets.only(left: 20, right: 20),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child:  defaultFormField(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: defaultFormField(
                   validate: (value) {
                     if (value!.isEmpty) {
                       return 'Please Enter a valid e-mail';
@@ -77,14 +77,14 @@ class _SignupPageState extends State<SignupPage> {
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(color: Colors.transparent),
                   )),
-                ),
+            ),
             Container(
-                margin: EdgeInsets.only(left: 20, right: 20),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: defaultFormField(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: defaultFormField(
                   validate: (value) {
                     if (value!.isEmpty) {
                       return 'Please a phone number';
@@ -101,15 +101,14 @@ class _SignupPageState extends State<SignupPage> {
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(color: Colors.transparent),
                   )),
-                ),
+            ),
             Container(
-                margin: EdgeInsets.only(left: 20, right: 20),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: 
-                defaultFormField(
+              margin: EdgeInsets.only(left: 20, right: 20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: defaultFormField(
                   validate: (value) {
                     if (value!.isEmpty) {
                       return 'Please Enter Your Address';
@@ -126,7 +125,7 @@ class _SignupPageState extends State<SignupPage> {
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(color: Colors.transparent),
                   )),
-                ),
+            ),
             Container(
               margin: EdgeInsets.only(left: 20, right: 20),
               decoration: BoxDecoration(
@@ -140,7 +139,7 @@ class _SignupPageState extends State<SignupPage> {
                     }
                     return null;
                   },
-                  controller: _passwordEditingController,
+                  controller: _emailEditingController,
                   isPassword: true,
                   type: TextInputType.name,
                   prefix: Icons.lock,
@@ -158,8 +157,7 @@ class _SignupPageState extends State<SignupPage> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: 
-              defaultFormField(
+              child: defaultFormField(
                   validate: (value) {
                     if (value!.isEmpty) {
                       return 'Please Enter Your Username';
