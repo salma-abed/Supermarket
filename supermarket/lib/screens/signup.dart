@@ -10,11 +10,15 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController _nameEditingController = TextEditingController();
 
   TextEditingController _emailEditingController = TextEditingController();
-  TextEditingController _passwordEditingController = TextEditingController();
   TextEditingController _phonenumberEditingController = TextEditingController();
-  TextEditingController _nameEditingController = TextEditingController();
+  TextEditingController _addressEditingController = TextEditingController();
+
+  TextEditingController _passwordEditingController = TextEditingController();
+  TextEditingController _repeatepasswordEditingController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -90,12 +94,12 @@ class _SignupPageState extends State<SignupPage> {
               child: defaultFormField(
                   validate: (value) {
                     if (value!.isEmpty) {
-                      return 'Please a phone number';
+                      return 'Please your Phone Number';
                     }
                     return null;
                   },
                   controller: _phonenumberEditingController,
-                  type: TextInputType.name,
+                  type: TextInputType.phone,
                   prefix: Icons.phone,
                   hint: 'Phone Number ',
                   hintstyle: TextStyle(fontWeight: FontWeight.w700),
@@ -118,7 +122,7 @@ class _SignupPageState extends State<SignupPage> {
                     }
                     return null;
                   },
-                  controller: _nameEditingController,
+                  controller: _addressEditingController,
                   type: TextInputType.name,
                   prefix: Icons.home,
                   hint: 'Address',
@@ -138,11 +142,11 @@ class _SignupPageState extends State<SignupPage> {
               child: defaultFormField(
                   validate: (value) {
                     if (value!.isEmpty) {
-                      return 'Please Enter a password';
+                      return 'Please Enter your Password';
                     }
                     return null;
                   },
-                  controller: _emailEditingController,
+                  controller: _passwordEditingController,
                   isPassword: true,
                   type: TextInputType.name,
                   prefix: Icons.lock,
@@ -163,11 +167,11 @@ class _SignupPageState extends State<SignupPage> {
               child: defaultFormField(
                   validate: (value) {
                     if (value!.isEmpty) {
-                      return 'Please Enter Your Username';
+                      return 'Please repeat your Password';
                     }
                     return null;
                   },
-                  controller: _emailEditingController,
+                  controller: _repeatepasswordEditingController,
                   isPassword: true,
                   type: TextInputType.name,
                   prefix: Icons.lock,
