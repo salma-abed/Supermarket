@@ -147,7 +147,13 @@ class _SignupPageState extends State<SignupPage> {
               alignment: Alignment.center,
               child: GestureDetector(
                   onTap: () {
-                    context.go("/DashBoard");
+                    if (_formKey.currentState!.validate()) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Processing Data')),
+                      );
+                      context.go("/DashBoard");
+                    }
+                    ;
                   },
                   child: Container(
                       alignment: Alignment.center,
