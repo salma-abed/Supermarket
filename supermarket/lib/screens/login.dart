@@ -9,6 +9,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -54,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                       type: TextInputType.emailAddress,
                       prefix: Icons.email,
                       hint: 'Email Address',
-                      hintstyle: TextStyle(fontWeight: FontWeight.w700),
+                      hintstyle: context,
                       contentpadding: EdgeInsets.only(left: 10),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -69,23 +70,29 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: defaultFormField(
-                      controller: _passwordController,
-                      type: TextInputType.text,
-                      prefix: Icons.lock,
-                      validate: (value) {
-                        if (value!.isEmpty) {
-                          return 'Please Enter Your Password';
-                        }
-                        return null;
-                      },
-                      hint: 'Password'),
+                    controller: _passwordController,
+                    type: TextInputType.text,
+                    prefix: Icons.lock,
+                    validate: (value) {
+                      if (value!.isEmpty) {
+                        return 'Please Enter Your Password';
+                      }
+                      return null;
+                    },
+                    hint: 'Password',
+                  ),
                 ),
                 SizedBox(height: 20.0),
                 Container(
                   alignment: Alignment.center,
                   child: GestureDetector(
                       onTap: () {
-                        context.go("/DashBoard");
+                        if (_formKey.currentState!.validate()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Processing Data')),
+                          );
+                          context.go("/DashBoard");
+                        }
                       },
                       child: Container(
                           alignment: Alignment.center,

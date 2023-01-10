@@ -30,7 +30,7 @@ Widget defaultFormField({
       decoration: InputDecoration(
         labelText: label,
         hintText: hint,
-        hintStyle: hintstyle,
+        hintStyle: TextStyle(fontWeight: FontWeight.w700),
         contentPadding: EdgeInsets.only(left: 10),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
