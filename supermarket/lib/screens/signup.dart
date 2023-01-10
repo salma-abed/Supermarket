@@ -49,6 +49,7 @@ class _SignupPageState extends State<SignupPage> {
                   },
                   controller: _nameEditingController,
                   type: TextInputType.name,
+                  prefix: Icons.person,
                   hint: 'Name',
                   hintstyle: TextStyle(fontWeight: FontWeight.w700),
                   contentpadding: EdgeInsets.only(left: 10),
