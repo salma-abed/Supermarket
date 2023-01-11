@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -143,6 +144,17 @@ class _SignupPageState extends State<SignupPage> {
                   validate: (value) {
                     if (value!.isEmpty) {
                       return 'Please Enter your Password';
+                    } else if (value.length < 8) {
+                      return 'The password contain at least 8 characters';
+                    } else if (!RegExp(r'[A-Z]').hasMatch(value)) {
+                      return 'The password contain uppercase letter';
+                    } else if (!RegExp(r'[0-9]').hasMatch(value)) {
+                      return 'The password contain number';
+                    } else if (!RegExp(r'[a-z]').hasMatch(value)) {
+                      return 'The password contain lowercase letter';
+                    } else if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]')
+                        .hasMatch(value)) {
+                      return 'The password contain special symbol';
                     }
                     return null;
                   },
@@ -191,7 +203,16 @@ class _SignupPageState extends State<SignupPage> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Processing Data')),
                       );
-                      context.go("/DashBoard");
+                      FirebaseAuth.instance
+                          .createUserWithEmailAndPassword(
+                              email: _emailEditingController.text,
+                              password: _passwordEditingController.text)
+                          .then((value) {
+                        print('New Account is created');
+                        context.go('/DashBoard');
+                      }).onError((error, stackTrace) {
+                        print('Error ${error.toString()}');
+                      });
                     }
                     ;
                   },

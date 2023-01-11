@@ -29,11 +29,11 @@ class _DashBoardState extends State<DashBoard> {
         
         
         body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('images/background/background5.jpg'),
-                  fit: BoxFit.cover),
-            ),
+        //     decoration: BoxDecoration(
+        //       image: DecorationImage(
+        //           image: AssetImage('images/background/background5.jpg'),
+        //           fit: BoxFit.cover),
+        //     ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -65,7 +65,7 @@ class _DashBoardState extends State<DashBoard> {
                           margin: EdgeInsets.all(20),
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Color(0xffe0fbfc).withOpacity(0.55),
+                              color: Color.fromARGB(255, 173, 205, 233).withOpacity(0.55),
                               border: Border.all(
                                 color: Color.fromARGB(0, 188, 230, 247),
                               ),
@@ -77,6 +77,24 @@ class _DashBoardState extends State<DashBoard> {
                               Row(
                                 children: [
                                   Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 10),
+                                    child: Column(children: [
+                                      CircleAvatar(
+                                        backgroundImage: AssetImage(
+                                          'images/filletsmeat.jpg',
+                                        ),
+                                        radius: 40,
+                                      ),
+                                      Text(
+                                        'Fillets',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ]),
+                                  ),
+                                                                    Container(
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 10),
                                     child: Column(children: [
@@ -150,7 +168,7 @@ class _DashBoardState extends State<DashBoard> {
                           margin: EdgeInsets.all(20),
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Color(0xffe0fbfc).withOpacity(0.55),
+                              color: Color.fromARGB(255, 173, 205, 233).withOpacity(0.55),
                               border: Border.all(
                                 color: Color.fromARGB(0, 188, 230, 247),
                               ),
@@ -227,7 +245,7 @@ class _DashBoardState extends State<DashBoard> {
                           margin: EdgeInsets.all(20),
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Color(0xffe0fbfc).withOpacity(0.55),
+                              color: Color.fromARGB(255, 173, 205, 233).withOpacity(0.55),
                               border: Border.all(
                                 color: Color.fromARGB(0, 188, 230, 247),
                               ),
