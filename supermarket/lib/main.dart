@@ -56,6 +56,6 @@ class MyApp extends ConsumerWidget {
       routerDelegate: _router.routerDelegate,
       routeInformationProvider: _router.routeInformationProvider,
       debugShowCheckedModeBanner: false,
-    );
+    );   
   }
 }
