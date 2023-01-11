@@ -84,11 +84,11 @@ class _DashBoardState extends State<DashBoard> {
         
         
         body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('images/background/background5.jpg'),
-                  fit: BoxFit.cover),
-            ),
+        //     decoration: BoxDecoration(
+        //       image: DecorationImage(
+        //           image: AssetImage('images/background/background5.jpg'),
+        //           fit: BoxFit.cover),
+        //     ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
