@@ -11,6 +11,7 @@ import 'package:mobileproject/screens/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import './screens/account_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,6 +35,14 @@ class MyApp extends ConsumerWidget {
       GoRoute(
         path: "Categories",
         builder: (context, state) => Category(),
+      ),
+            GoRoute(
+        path: "account",
+        builder: (context, state) => Account(),
+      ),
+                  GoRoute(
+        path: "login",
+        builder: (context, state) => LoginPage(),
       ),
     ]),
   ]);
