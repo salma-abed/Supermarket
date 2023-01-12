@@ -22,12 +22,12 @@ class _DashBoardState extends State<DashBoard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< Updated upstream
-      appBar: AppBar(
+
+      // appBar: AppBar(
       
-      ),
-            drawer: DraweWigdet(),
-=======
+      // ),
+      //       drawer: DraweWigdet(),
+
       appBar: AppBar(),
             drawer: Drawer(child: ListView(
           children: [
@@ -90,9 +90,6 @@ class _DashBoardState extends State<DashBoard> {
         ),
         ),
         //bottomNavigationBar: NavigationBar(),
->>>>>>> Stashed changes
-        
-        
         
         body: Container(
             child: Column(
