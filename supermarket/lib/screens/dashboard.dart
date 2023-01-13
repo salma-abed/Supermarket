@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobileproject/screens/categries.dart';
+import 'package:mobileproject/screens/contactus.dart';
 import 'package:mobileproject/screens/loading.dart';
 import 'package:mobileproject/widgets/input.dart';
 import 'package:mobileproject/widgets/navigationbar.dart';
@@ -34,8 +36,14 @@ class _DashBoardState extends State<DashBoard> {
 
       appBar: AppBar(
         title: Center(child: const Text('Sofa Market')),
+                actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.email),
+            onPressed: () {context.go('/Contact');
+  }, ), 
+  ],
       ),
-            drawer: Drawer(child: ListView(
+        drawer: Drawer(child: ListView(
           children: [
             UserAccountsDrawerHeader(
               accountName: Text("AppMaking.co"),

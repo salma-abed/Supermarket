@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobileproject/screens/categries.dart';
+import 'package:mobileproject/screens/contactus.dart';
 import 'package:mobileproject/screens/dashboard.dart';
 import 'package:mobileproject/screens/loading.dart';
 import 'package:mobileproject/screens/login.dart';
@@ -26,24 +27,28 @@ class MyApp extends ConsumerWidget {
     GoRoute(path: '/', builder: (context, state) => LoginPage(), routes: [
       GoRoute(
         path: "DashBoard",
-        builder: (context, state) => const DashBoard(),
-      ),
+        builder: (context, state) => DashBoard(),
+          // routes:[
+          //   GoRoute(path: 'contact', builder:(context, state) => ContactUsPage(), ),
+          // ]
+          ),
       GoRoute(
         path: "Signup",
         builder: (context, state) => SignupPage(),
       ),
+      // GoRoute(
+      //   path: "Categories",
+      //   builder: (context, state) => Category(),
+      // ),
       GoRoute(
-        path: "Categories",
-        builder: (context, state) => Category(),
+        path: "Contact",
+        builder: (context, state) => ContactUsPage(),
       ),
             GoRoute(
         path: "account",
         builder: (context, state) => Account(),
       ),
-                  GoRoute(
-        path: "login",
-        builder: (context, state) => LoginPage(),
-      ),
+      
     ]),
   ]);
   MyApp({super.key});
