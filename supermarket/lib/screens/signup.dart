@@ -235,4 +235,3 @@ class _SignupPageState extends State<SignupPage> {
     ));
   }
 }
-                          //TextFormField(obscureText: true, decoration: InputDecoration(labelText:'Password'), validator:(String value){if (value.isEmpty) {return 'Please enter a password';}}, onSaved:(String value){_password = value;}),

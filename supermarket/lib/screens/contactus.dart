@@ -9,31 +9,57 @@ class ContactUsPage extends StatefulWidget {
 
 class _ContactUsPageState extends State<ContactUsPage> {
 
-  // Text Controllers for form inputs
-  //final TextEditingController nameController = TextEditingController();
-  // final TextEditingController emailController = TextEditingController();
-  // final TextEditingController messageController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
 
-      appBar: AppBar(title: Text('Contact Us')),
+      appBar: AppBar(title: Text('Contact Us'),backgroundColor: Colors.blue.shade400,),
 
-      body: Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                          child: TextField(
-  decoration: InputDecoration(
-    hintText: 'Enter a value'
+      body: Center(
+        child: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('We are happy to hear from you!',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.blue.shade400,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600)
+                                  ),
+                  Container(
+                    height: 150,
+                    width: 300,
+                    margin: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(30),
+                    decoration: BoxDecoration(                              
+                      color: Colors.transparent,
+                                border: Border.all(
+                                  color: Colors.blue.shade400,
+                                  ),
+                                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                                  ),
+                    child: Center(
+                      child: TextField(
+  decoration:
+  InputDecoration(
+    hintText: 'Enter your message here'
   ),
-                ),
-            ),
-              ]
-            ),
-            ),);
+                  ),
+                      ),
+                    ),
+                                      GestureDetector(
+                      onTap: () {
+                        if ()
+                          print('Please enter a text into the field');
+                      }
+              ),
+                ]
+              ),
+              ),
+      ),);
             }
             }
+
