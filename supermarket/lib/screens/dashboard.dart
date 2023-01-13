@@ -9,6 +9,7 @@ import 'package:mobileproject/screens/loading.dart';
 import 'package:mobileproject/widgets/input.dart';
 import 'package:mobileproject/widgets/navigationbar.dart';
 import 'package:no_glow_scroll/no_glow_scroll.dart';
+import '../widgets/default_form_field.dart';
 import '../widgets/drawer_widget.dart';
 
 class DashBoard extends StatefulWidget {
@@ -19,6 +20,8 @@ class DashBoard extends StatefulWidget {
 }
 
 class _DashBoardState extends State<DashBoard> {
+    //final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,8 +30,11 @@ class _DashBoardState extends State<DashBoard> {
       
       // ),
       //       drawer: DraweWigdet(),
+      
 
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Center(child: const Text('Sofa Market')),
+      ),
             drawer: Drawer(child: ListView(
           children: [
             UserAccountsDrawerHeader(
@@ -90,11 +96,12 @@ class _DashBoardState extends State<DashBoard> {
         ),
         ),
         //bottomNavigationBar: NavigationBar(),
-        
+
         body: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                
                 Container(
                   padding: EdgeInsets.only(top: 50, left: 20),
                   child: Text('Welcome Back, Salma',
@@ -104,6 +111,48 @@ class _DashBoardState extends State<DashBoard> {
                           fontSize: 30,
                           fontWeight: FontWeight.w500)),
                 ),
+          //       TextField(  
+
+          //   //controller: myController,  
+
+          //   decoration: InputDecoration(  
+
+          //     hintText: 'Search Products here',  
+
+          //     prefixIcon: IconButton(icon: Icon(Icons.search), onPressed: (){}),  
+
+          //     //suffixIcon: IconButton(icon: Icon(Icons.clear), onPressed: (){myController.clear();}),  
+
+          //   ),  
+
+          // ), 
+          Padding(
+            padding: const EdgeInsets.only(top:20.0,bottom:20.0),
+            child: Container(
+                        margin: EdgeInsets.only(left: 20, right: 20),
+                        decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: defaultFormField(
+                            validate: (value) {
+                              if (value!.isEmpty) {
+                                return '  ';
+                              }
+                              return null;
+                            },
+                            controller: _searchController,
+                            type: TextInputType.name,
+                            prefix: Icons.search,
+                            hint: 'Search products here',
+                            hintstyle: TextStyle(fontWeight: FontWeight.w800),
+                            contentpadding: EdgeInsets.only(left: 10),
+                            focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: BorderSide(color: Colors.transparent),
+                            )),
+                      ),
+          ), 
                 Expanded(
                   child: NoGlowScroll(
                     child: ListView(
@@ -388,7 +437,7 @@ class _DashBoardState extends State<DashBoard> {
                           margin: EdgeInsets.all(20),
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Color(0xffe0fbfc).withOpacity(0.55),
+                              color: Color.fromARGB(255, 173, 205, 233).withOpacity(0.55),
                               border: Border.all(
                                 color: Color.fromARGB(0, 188, 230, 247),
                               ),

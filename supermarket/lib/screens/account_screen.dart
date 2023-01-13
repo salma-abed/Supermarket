@@ -8,7 +8,7 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
-   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(title: Text('Account'),),body: Form(
@@ -76,6 +76,6 @@ class _AccountState extends State<Account> {
         ],
       ),
     ) ,);
-   
+  
   }
 }
