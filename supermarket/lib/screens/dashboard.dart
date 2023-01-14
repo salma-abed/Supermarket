@@ -106,6 +106,7 @@ class _DashBoardState extends State<DashBoard> {
         //bottomNavigationBar: NavigationBar(),
 
         body: Container(
+          
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

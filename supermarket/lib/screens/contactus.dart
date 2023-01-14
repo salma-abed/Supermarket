@@ -1,4 +1,7 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 
 
@@ -8,7 +11,13 @@ class ContactUsPage extends StatefulWidget {
 }
 
 class _ContactUsPageState extends State<ContactUsPage> {
+TextEditingController inputController = TextEditingController();
 
+void dispose() {
+    // Clean up the controller when the widget is disposed.
+    inputController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -18,6 +27,8 @@ class _ContactUsPageState extends State<ContactUsPage> {
 
       body: Center(
         child: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,26 +47,50 @@ class _ContactUsPageState extends State<ContactUsPage> {
                     padding: EdgeInsets.all(30),
                     decoration: BoxDecoration(                              
                       color: Colors.transparent,
-                                border: Border.all(
-                                  color: Colors.blue.shade400,
-                                  ),
-                                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                      border: Border.all(
+                        color: Colors.blue.shade400,
+                          ),
+                        borderRadius: BorderRadius.circular(30),
                                   ),
                     child: Center(
                       child: TextField(
-  decoration:
-  InputDecoration(
-    hintText: 'Enter your message here'
-  ),
+                        controller: inputController,
+                          decoration:InputDecoration(
+                            hintText: 'Enter your message here'
+                          ),
                   ),
                       ),
                     ),
-                                      GestureDetector(
-                      onTap: () {
-                        if ()
-                          print('Please enter a text into the field');
-                      }
-              ),
+                    SizedBox(
+                      height:20
+                    ),
+                    GestureDetector(
+                      
+                      onTap: (){
+                        if(inputController.text == null || inputController.text == ''){
+                          Text("please enter a text.");
+                        }else{
+                          context.go('/DashBoard');
+                        }
+                        },
+                      child: Container(
+                                width: 100,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: Colors.blue.shade400,
+                                ),
+                                child: Center(
+                                  child: Text(
+                          'Submit',
+                          style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
+                                ),
+                      ),
+                      
+                      ),
+                    
+                                      
                 ]
               ),
               ),
