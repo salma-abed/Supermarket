@@ -7,14 +7,17 @@ Widget defaultContainer({
   FontWeight fontWeight = FontWeight.w400,
   Color color = const Color.fromARGB(0, 188, 230, 24),
   BorderRadius radius = const BorderRadius.all(Radius.circular(30)),
-  Margin,
+  required Margin,
   Padding,
-  required Widget child,
-  BoxDecoration? decoration,
+  required ListView child,
+  required BoxDecoration decoration,
 }) =>
     Container(
       padding: EdgeInsets.only(left: 20, top: 5),
-      child: child,
+      child: Text('',
+          textAlign: TextAlign.start,
+          style: TextStyle(
+              color: color, fontSize: fontsize, fontWeight: fontWeight)),
       margin: EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: color,
