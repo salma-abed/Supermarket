@@ -23,7 +23,14 @@ void dispose() {
 
     return Scaffold(
 
-      appBar: AppBar(title: Text('Contact Us'),backgroundColor: Colors.blue.shade400,),
+      appBar: AppBar(
+        title: Text('Contact Us'),
+        backgroundColor: Colors.blue.shade400,
+        leading: IconButton( icon: Icon(Icons.arrow_back),
+        onPressed: () {context.go('/DashBoard');
+        },
+        ),
+        ),
 
       body: Center(
         child: Container(

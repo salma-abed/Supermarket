@@ -1,5 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors, unnecessary_import, implementation_imports, unused_import
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -25,6 +27,14 @@ class DashBoard extends StatefulWidget {
 class _DashBoardState extends State<DashBoard> {
     //final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController _searchController = TextEditingController();
+  Future<String> getUsername() async {
+  //Get the current user 
+  var user = await Firebase.auth().currentUser;
+
+  //Return the username of the current user 
+  return user.displayName;
+}
+  //get username => null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +54,7 @@ class _DashBoardState extends State<DashBoard> {
   }, ), 
   ],
       ),
-         drawer:DraweWigdet(),
+        drawer:DraweWigdet(),
         // Drawer(child: ListView(
         //   children: [
         //     UserAccountsDrawerHeader(
@@ -115,7 +125,7 @@ class _DashBoardState extends State<DashBoard> {
                 
                 Container(
                   padding: EdgeInsets.only(top: 50, left: 20),
-                  child: Text('Welcome Back, Salma',
+                  child: Text('Welcome Back, $username',
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           color: Colors.black,
