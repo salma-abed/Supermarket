@@ -27,13 +27,13 @@ class DashBoard extends StatefulWidget {
 class _DashBoardState extends State<DashBoard> {
     //final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController _searchController = TextEditingController();
-  Future<String> getUsername() async {
-  //Get the current user 
-  var user = await Firebase.auth().currentUser;
+//   Future<String> getUsername() async {
+//   //Get the current user 
+//   //var user = await Firebase.auth().currentUser;
 
-  //Return the username of the current user 
-  return user.displayName;
-}
+//   //Return the username of the current user 
+//   return user.displayName;
+// }
   //get username => null;
   @override
   Widget build(BuildContext context) {
@@ -125,7 +125,7 @@ class _DashBoardState extends State<DashBoard> {
                 
                 Container(
                   padding: EdgeInsets.only(top: 50, left: 20),
-                  child: Text('Welcome Back, $username',
+                  child: Text('Welcome Back, username',
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           color: Colors.black,
