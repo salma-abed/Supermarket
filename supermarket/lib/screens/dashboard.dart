@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:mobileproject/screens/categries.dart';
 import 'package:mobileproject/screens/contactus.dart';
 import 'package:mobileproject/screens/loading.dart';
+import 'package:mobileproject/widgets/default_container.dart';
 import 'package:mobileproject/widgets/input.dart';
 import 'package:mobileproject/widgets/navigationbar.dart';
 import 'package:no_glow_scroll/no_glow_scroll.dart';
@@ -175,11 +176,11 @@ class _DashBoardState extends State<DashBoard> {
                                   fontSize: 30,
                                   fontWeight: FontWeight.w400)),
                         ),
-                        Container(
-                          height: 150,
-                          width: MediaQuery.of(context).size.width,
-                          margin: EdgeInsets.all(20),
-                          padding: EdgeInsets.all(10),
+                        defaultContainer(
+                          H: 150,
+                          W: MediaQuery.of(context).size.width,
+                          Margin: EdgeInsets.all(20),
+                          Padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                               color: Color.fromARGB(255, 173, 205, 233).withOpacity(0.55),
                               border: Border.all(
