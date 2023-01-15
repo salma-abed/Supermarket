@@ -29,9 +29,9 @@ class _NavigationBarState extends State<NavigationBar> {
           BottomNavigationBarItem(icon: Icon(Icons.calendar_month), label: ('Past-Orders')),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: ('Account')),
         ],  
-        currentIndex: _selectedIndex,   // this will be set when a new tab is tapped  
-        onTap: _onItemTapped, // new function callback on tab selection  
+        currentIndex: _selectedIndex,   
+        onTap: _onItemTapped,  
       ),
-    );											// end of the class Navigation bar page state  
-  }                                               // end of the class navigation bar page stateful widget  
+    );										 
+  }                                     
 }

@@ -15,6 +15,7 @@ import 'package:no_glow_scroll/no_glow_scroll.dart';
 import '../widgets/default_form_field.dart';
 import '../widgets/drawer_widget.dart';
 
+
 class DashBoard extends StatefulWidget {
   const DashBoard({super.key});
 
@@ -25,27 +26,34 @@ class DashBoard extends StatefulWidget {
 class _DashBoardState extends State<DashBoard> {
   //final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController _searchController = TextEditingController();
+  Future<String> getUsername() async {
+  //Get the current user 
+  var user = await Firebase.auth().currentUser;
+
+  //Return the username of the current user 
+  return user.displayName;
+}
+  //get username => null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
-        // appBar: AppBar(
+      // appBar: AppBar(
+      
+      // ),
+      //       drawer: DraweWigdet(),
+      
 
-        // ),
-        //       drawer: DraweWigdet(),
-
-        appBar: AppBar(
-          title: Center(child: const Text('Sofa Market')),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.email),
-              onPressed: () {
-                context.go('/Contact');
-              },
-            ),
-          ],
-        ),
-        drawer: DraweWigdet(),
+      appBar: AppBar(
+        title: Center(child: const Text('Sofa Market')),
+                actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.email),
+            onPressed: () {context.go('/Contact');
+  }, ), 
+  ],
+      ),
+        drawer:DraweWigdet(),
         // Drawer(child: ListView(
         //   children: [
         //     UserAccountsDrawerHeader(
@@ -110,18 +118,19 @@ class _DashBoardState extends State<DashBoard> {
 
         body: Container(
             child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              padding: EdgeInsets.only(top: 50, left: 20),
-              child: Text('Welcome Back, Salma',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500)),
-            ),
-            //       TextField(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                
+                Container(
+                  padding: EdgeInsets.only(top: 50, left: 20),
+                  child: Text('Welcome Back, $username',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w500)),
+                ),
+          //       TextField(  
 
             //   //controller: myController,
 
