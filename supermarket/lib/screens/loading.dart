@@ -126,7 +126,7 @@ class loadingScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 40,
                         ),
-                      )
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -135,19 +135,14 @@ class loadingScreen extends StatelessWidget {
                 ],
               ),
             ),
-            TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DashBoard()));
-                },
-                child: Text(
-                  'Continue',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 50,
-                    color: Color(0xff023047),
-                  ),
-                )),
+            Padding(
+              padding: const EdgeInsets.only(top: 100.0),
+              child: Container(
+                child: CircularProgressIndicator(
+                  color: Colors.deepOrange,
+                ),
+              ),
+            ),
           ],
         ),
       ),
