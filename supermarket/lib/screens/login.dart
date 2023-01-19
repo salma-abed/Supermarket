@@ -57,12 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: defaultFormField(
-                          validate: (value) {
-                            if (value!.isEmpty) {
-                              return 'Please Enter a valid e-mail';
-                            }
-                            return null;
-                          },
+                          validate: validateEmail,
                           controller: _emailController,
                           type: TextInputType.name,
                           prefix: Icons.email,
@@ -82,12 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: defaultFormField(
-                          validate: (value) {
-                            if (value!.isEmpty) {
-                              return 'Please Enter a password';
-                            }
-                            return null;
-                          },
+                          validate: passwordValidate,
                           controller: _passwordController,
                           isPassword: true,
                           type: TextInputType.name,
@@ -110,15 +100,8 @@ class _LoginPageState extends State<LoginPage> {
                                 const SnackBar(
                                     content: Text('Processing Data')),
                               );
-                              FirebaseAuth.instance
-                                  .signInWithEmailAndPassword(
-                                      email: _emailController.text,
-                                      password: _passwordController.text)
-                                  .then((value) {
-                                context.go('/DashBoard');
-                              }).onError((error, stackTrace) {
-                                print('Error ${error.toString()}');
-                              });
+                              _signin(_emailController.text,
+                                  _passwordController.text);
                             }
                             ;
                           },
@@ -199,5 +182,32 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  _signin(String _email, String _password) async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: _email, password: _password);
+
+      context.go('/DashBoard');
+    } on FirebaseAuthException catch (error) {
+      print(error.message);
+    }
+  }
+
+  String? validateEmail(String? formEmail) {
+    if (formEmail == null || formEmail.isEmpty) {
+      return 'Please Enter a valid e-mail';
+    } else {
+      return null;
+    }
+  }
+
+  String? passwordValidate(String? formPassword) {
+    if (formPassword == null || formPassword.isEmpty) {
+      return 'Please Enter your password';
+    } else {
+      return null;
+    }
   }
 }
