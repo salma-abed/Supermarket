@@ -185,13 +185,30 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _signin(String _email, String _password) async {
+    AlertDialog alert = AlertDialog(
+      title: Text('Wrong user credintials'),
+      content: Text('E-mail or password is incorrect'),
+      actions: [
+        TextButton(
+            child: Text('OK'),
+            onPressed: (() {
+              context.pop();
+            })),
+      ],
+    );
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: _email, password: _password);
 
       context.go('/DashBoard');
     } on FirebaseAuthException catch (error) {
-      print(error.message);
+      if (error.code == 'user-not-found' || error.code == 'wrong-password') {
+        showDialog(
+            context: context,
+            builder: ((context) {
+              return alert;
+            }));
+      }
     }
   }
 
