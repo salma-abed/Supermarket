@@ -8,6 +8,7 @@ import 'package:mobileproject/screens/contactus.dart';
 import 'package:mobileproject/screens/dashboard.dart';
 import 'package:mobileproject/screens/loading.dart';
 import 'package:mobileproject/screens/login.dart';
+import 'package:mobileproject/screens/reset_password.dart';
 import 'package:mobileproject/screens/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -52,6 +53,10 @@ class MyApp extends ConsumerWidget {
       GoRoute(
         path: "account",
         builder: (context, state) => Account(),
+      ),
+      GoRoute(
+        path: "passwordreset",
+        builder: (context, state) => PasswordReset(),
       ),
     ]),
   ]);

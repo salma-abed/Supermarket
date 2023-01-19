@@ -44,6 +44,7 @@ Widget defaultFormField({
                 onPressed: suffixPressed,
                 icon: Icon(
                   suffix,
+                  // Change this to the correct IconData object
                 ),
               )
             : null,

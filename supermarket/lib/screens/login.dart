@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-
+  bool _isObscure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,6 +85,15 @@ class _LoginPageState extends State<LoginPage> {
                           hint: 'Password',
                           hintstyle: TextStyle(fontWeight: FontWeight.w700),
                           contentpadding: EdgeInsets.only(left: 10),
+                          // suffix: IconButton(
+                          //     onPressed: () {
+                          //       setState(() {
+                          //         _isObscure = !_isObscure;
+                          //       });
+                          //     },
+                          //     icon: Icon(_isObscure
+                          //         ? Icons.visibility
+                          //         : Icons.visibility_off)),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color: Colors.transparent),
@@ -118,31 +127,6 @@ class _LoginPageState extends State<LoginPage> {
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500)))),
                     ),
-
-                    // Container(
-                    //   alignment: Alignment.center,
-                    //   child: GestureDetector(
-                    //       onTap: () {
-                    //         if (_formKey.currentState!.validate()) {
-                    //           ScaffoldMessenger.of(context).showSnackBar(
-                    //             const SnackBar(content: Text('Processing Data')),
-                    //           );
-                    //           context.go("/DashBoard");
-                    //         }
-                    //       },
-                    //       child: Container(
-                    //           alignment: Alignment.center,
-                    //           decoration: BoxDecoration(
-                    //               borderRadius: BorderRadius.circular(15),
-                    //               color: Colors.white),
-                    //           width: 100,
-                    //           height: 45,
-                    //           child: const Text("Login",
-                    //               style: TextStyle(
-                    //                   color: Color(0xFF191C32),
-                    //                   fontSize: 20,
-                    //                   fontWeight: FontWeight.w500)))),
-                    // ),
                     SizedBox(height: 8.0),
                     Container(
                       alignment: Alignment.center,
@@ -168,13 +152,26 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                   width: 100,
                                   height: 45,
-                                  child: const Text("SignUp",
+                                  child: const Text('SignUp',
                                       style: TextStyle(
                                           color: Color(0xFF191C32),
                                           fontSize: 18,
                                           fontWeight: FontWeight.w500))),
                             ],
                           )),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextButton(
+                            onPressed: () {
+                              context.go('/passwordreset');
+                            },
+                            child: Text(
+                              'Forgot Password?',
+                              style: TextStyle(color: Colors.black),
+                            ))
+                      ],
                     ),
                   ]),
             ),

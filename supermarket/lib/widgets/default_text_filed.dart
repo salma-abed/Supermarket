@@ -21,5 +21,4 @@ Widget defaultTextField({
           color: color,
           height: height,
           decoration: decoration ?? null,
-        )
-        );
+        ));
