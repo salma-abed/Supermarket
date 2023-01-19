@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobileproject/screens/dashboard.dart';
 
-class loadingScreen extends StatelessWidget {
+class loadingScreen extends StatefulWidget {
   const loadingScreen({super.key});
+
+  @override
+  State<loadingScreen> createState() => _loadingScreenState();
+}
+
+class _loadingScreenState extends State<loadingScreen> {
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 5), () {
+      context.go('/Login');
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -139,6 +152,7 @@ class loadingScreen extends StatelessWidget {
               padding: const EdgeInsets.only(top: 100.0),
               child: Container(
                 child: CircularProgressIndicator(
+                  strokeWidth: 5,
                   color: Colors.deepOrange,
                 ),
               ),

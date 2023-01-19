@@ -24,18 +24,19 @@ void main() async {
 
 class MyApp extends ConsumerWidget {
   final _router = GoRouter(routes: [
-    GoRoute(path: '/', builder: (context, state) => LoginPage(), routes: [
+    GoRoute(path: '/', builder: (context, state) => loadingScreen(), routes: [
       GoRoute(
         path: "DashBoard",
         builder: (context, state) => DashBoard(),
-          // routes:[
-          //   GoRoute(path: 'contact', builder:(context, state) => ContactUsPage(), ),
-          // ]
-          ),
+        // routes:[
+        //   GoRoute(path: 'contact', builder:(context, state) => ContactUsPage(), ),
+        // ]
+      ),
       GoRoute(
         path: "Signup",
         builder: (context, state) => SignupPage(),
       ),
+
       // GoRoute(
       //   path: "Categories",
       //   builder: (context, state) => Category(),
@@ -44,11 +45,14 @@ class MyApp extends ConsumerWidget {
         path: "Contact",
         builder: (context, state) => ContactUsPage(),
       ),
-            GoRoute(
+      GoRoute(
+        path: "Login",
+        builder: (context, state) => LoginPage(),
+      ),
+      GoRoute(
         path: "account",
         builder: (context, state) => Account(),
       ),
-      
     ]),
   ]);
   MyApp({super.key});
@@ -61,7 +65,6 @@ class MyApp extends ConsumerWidget {
       routerDelegate: _router.routerDelegate,
       routeInformationProvider: _router.routeInformationProvider,
       debugShowCheckedModeBanner: false,
-    );   
-    
+    );
   }
 }
