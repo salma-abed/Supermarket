@@ -46,7 +46,7 @@ class _DashBoardState extends State<DashBoard> {
                 actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.email),
-            onPressed: () {context.go('/IntroDraft');
+            onPressed: () {context.go('/Contact');
   }, ), 
   ],
       ),

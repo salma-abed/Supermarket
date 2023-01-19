@@ -8,7 +8,6 @@ import 'package:mobileproject/screens/viewcart.dart';
 import 'package:provider/provider.dart';
 import 'package:mobileproject/screens/categries.dart';
 import 'package:mobileproject/constants.dart';
-
 import 'package:mobileproject/screens/contactus.dart';
 import 'package:mobileproject/screens/dashboard.dart';
 import 'package:mobileproject/screens/loading.dart';
@@ -58,6 +57,10 @@ class MyApp extends ConsumerWidget  {
       GoRoute(
         path: "account",
         builder: (context, state) => Account(),
+      ),
+      GoRoute(
+        path: "Contact",
+        builder: (context, state) => ContactUsPage(),
       ),
       GoRoute(
         path: "IntroDraft",
