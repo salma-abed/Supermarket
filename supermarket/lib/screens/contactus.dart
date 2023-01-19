@@ -72,7 +72,6 @@ void dispose() {
                       height:20
                     ),
                     GestureDetector(
-                      
                       onTap: (){
                         if(inputController.text == null || inputController.text == ''){
                           Text("please enter a text.");
@@ -92,16 +91,14 @@ void dispose() {
                           'Submit',
                           style: TextStyle(fontWeight: FontWeight.w500),
                       ),
-                                ),
                       ),
-                      
                       ),
-                    
-                                      
+                      ),                 
                 ]
               ),
               ),
-      ),);
+      ),
+      );
             }
             }
 

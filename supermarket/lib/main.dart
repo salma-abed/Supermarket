@@ -3,11 +3,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mobileproject/screens/homepage.dart';
+import 'package:mobileproject/screens/viewcart.dart';
+import 'package:provider/provider.dart';
 import 'package:mobileproject/screens/categries.dart';
+import 'package:mobileproject/constants.dart';
+
 import 'package:mobileproject/screens/contactus.dart';
 import 'package:mobileproject/screens/dashboard.dart';
 import 'package:mobileproject/screens/loading.dart';
 import 'package:mobileproject/screens/login.dart';
+import 'package:mobileproject/screens/items.dart';
 import 'package:mobileproject/screens/signup.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -22,7 +28,7 @@ void main() async {
   runApp(ProviderScope(child: MyApp()));
 }
 
-class MyApp extends ConsumerWidget {
+class MyApp extends ConsumerWidget  {
   final _router = GoRouter(routes: [
     GoRoute(path: '/', builder: (context, state) => loadingScreen(), routes: [
       GoRoute(
@@ -53,18 +59,28 @@ class MyApp extends ConsumerWidget {
         path: "account",
         builder: (context, state) => Account(),
       ),
+      GoRoute(
+        path: "IntroDraft",
+        builder: (context, state) => HomePage(),
+      ),
+      GoRoute(
+        path: "Cart",
+        builder: (context, state) => CartPage(),
+      ),
     ]),
   ]);
   MyApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp.router(
-      title: 'Flutter Demo',
-      routeInformationParser: _router.routeInformationParser,
-      routerDelegate: _router.routerDelegate,
-      routeInformationProvider: _router.routeInformationProvider,
-      debugShowCheckedModeBanner: false,
-    );
+  Widget build(BuildContext context, WidgetRef ref)  {
+    
+      return  MaterialApp.router(
+        title: 'Flutter Demo',
+        routeInformationParser: _router.routeInformationParser,
+        routerDelegate: _router.routerDelegate,
+        routeInformationProvider: _router.routeInformationProvider,
+        debugShowCheckedModeBanner: false,
+      );
+    
   }
 }

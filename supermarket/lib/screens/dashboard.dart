@@ -50,7 +50,7 @@ class _DashBoardState extends State<DashBoard> {
                 actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.email),
-            onPressed: () {context.go('/Contact');
+            onPressed: () {context.go('/IntroDraft');
   }, ), 
   ],
       ),
@@ -132,21 +132,6 @@ class _DashBoardState extends State<DashBoard> {
                           fontSize: 30,
                           fontWeight: FontWeight.w500)),
                 ),
-          //       TextField(  
-
-          //   //controller: myController,  
-
-          //   decoration: InputDecoration(  
-
-          //     hintText: 'Search Products here',  
-
-          //     prefixIcon: IconButton(icon: Icon(Icons.search), onPressed: (){}),  
-
-          //     //suffixIcon: IconButton(icon: Icon(Icons.clear), onPressed: (){myController.clear();}),  
-
-          //   ),  
-
-          // ), 
           Padding(
             padding: const EdgeInsets.only(top:20.0,bottom:20.0),
             child: Container(
@@ -214,6 +199,7 @@ class _DashBoardState extends State<DashBoard> {
                                         ),
                                         radius: 40,
                                       ),
+                                      
                                       Text(
                                         'Fillets',
                                         style: TextStyle(
@@ -222,7 +208,7 @@ class _DashBoardState extends State<DashBoard> {
                                       ),
                                     ]),
                                   ),
-                                                                    Container(
+                              Container(
                                     padding:
                                         EdgeInsets.symmetric(horizontal: 10),
                                     child: Column(children: [
@@ -533,6 +519,8 @@ class _DashBoardState extends State<DashBoard> {
                   ),
                 ),
               ],
-            )));
+            )
+            )
+            );
   }
 }
