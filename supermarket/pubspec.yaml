@@ -42,7 +42,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_riverpod: ^2.1.3
   go_router: ^6.0.1
-  shared_preferences: ^2.0.15
+  shared_preferences:
+  flutter_secure_storage: ^7.0.1
   no_glow_scroll: ^0.0.2
   settings_ui: ^2.0.2
 
