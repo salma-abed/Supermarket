@@ -51,7 +51,7 @@ class _DashBoardState extends State<DashBoard> {
   ),
   ],
       ),
-      bottomNavigationBar: NavigationBar() ,
+      //bottomNavigationBar: NavigationBar() ,
        // drawer:DraweWigdet(),
       
 
