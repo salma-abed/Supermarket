@@ -3,6 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
+import 'package:mobileproject/screens/homepage.dart';
+import 'package:mobileproject/screens/ordershistory.dart';
+import 'package:mobileproject/screens/viewcart.dart';
+import 'package:provider/provider.dart';
 import 'package:mobileproject/screens/categries.dart';
 import 'package:mobileproject/screens/contactus.dart';
 import 'package:mobileproject/screens/dashboard.dart';
@@ -57,6 +62,10 @@ class MyApp extends ConsumerWidget {
       GoRoute(
         path: "passwordreset",
         builder: (context, state) => PasswordReset(),
+      ),
+      GoRoute(
+        path: "Orders History",
+        builder: (context, state) => OrdersHistory(),
       ),
     ]),
   ]);
