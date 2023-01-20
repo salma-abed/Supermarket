@@ -53,21 +53,13 @@ class _DashBoardState extends State<DashBoard> {
         ),
         // drawer: DraweWigdet(),
 
-        bottomNavigationBar: NavigationBarWidget(),
+        // bottomNavigationBar: NavigationBarWidget(),
 
         body: Container(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              padding: EdgeInsets.only(top: 50, left: 20),
-              child: Text('Welcome Back, username',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500)),
-            ),
+            ItemContainer(cat: 'Welcome username'),
             Padding(
               padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
               child: Container(
@@ -154,7 +146,7 @@ class _DashBoardState extends State<DashBoard> {
                                 child: Column(children: [
                                   ItemSubContainer(
                                       img: 'images/cubesandcuts.jpg',
-                                      subCat: ''),
+                                      subCat: 'any'),
                                 ]),
                               ),
                             ],
@@ -175,17 +167,38 @@ class _DashBoardState extends State<DashBoard> {
                             color: Color.fromARGB(0, 188, 230, 247),
                           ),
                           borderRadius: BorderRadius.all(Radius.circular(30))),
-                      child: Row(
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
                         children: [
-                          ItemSubContainer(
-                              img: 'images/filletsmeat.jpg', subCat: 'Fillets'),
-                          ItemSubContainer(
-                            img: 'images/marinated.jpg',
-                            subCat: 'Marinated',
-                          ),
-                          ItemSubContainer(
-                            img: 'images/cubesandcuts.jpg',
-                            subCat: 'Cubes & \n Strips',
+                          Row(
+                            children: [
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                child: Column(children: [
+                                  ItemSubContainer(
+                                      img: 'images/filletsmeat.jpg',
+                                      subCat: 'Fillets'),
+                                ]),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                child: Column(children: [
+                                  ItemSubContainer(
+                                    img: 'images/marinated.jpg',
+                                    subCat: 'Marinated',
+                                  ),
+                                ]),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                child: Column(children: [
+                                  ItemSubContainer(
+                                    img: 'images/cubesandcuts.jpg',
+                                    subCat: 'Cubes & Strips',
+                                  ),
+                                ]),
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -230,7 +243,7 @@ class _DashBoardState extends State<DashBoard> {
                                 child: Column(children: [
                                   ItemSubContainer(
                                     img: 'images/cubesandcuts.jpg',
-                                    subCat: 'Cubes & \n Strips',
+                                    subCat: 'Cubes & Strips',
                                   ),
                                 ]),
                               ),
@@ -239,15 +252,7 @@ class _DashBoardState extends State<DashBoard> {
                         ],
                       ),
                     ),
-                    Container(
-                      padding: EdgeInsets.only(left: 20, top: 10),
-                      child: Text('Dairy & Milk',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 30,
-                              fontWeight: FontWeight.w400)),
-                    ),
+                    ItemContainer(cat: 'Dairy & Milk'),
                     Container(
                       height: 150,
                       width: MediaQuery.of(context).size.width,
@@ -266,53 +271,28 @@ class _DashBoardState extends State<DashBoard> {
                           Row(
                             children: [
                               Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
                                 child: Column(children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                      'images/filletsmeat.jpg',
-                                    ),
-                                    radius: 40,
-                                  ),
-                                  Text(
-                                    'Fillets',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
+                                  ItemSubContainer(
+                                      img: 'images/filletsmeat.jpg',
+                                      subCat: 'Fillets'),
+                                ]),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                child: Column(children: [
+                                  ItemSubContainer(
+                                    img: 'images/marinated.jpg',
+                                    subCat: 'Marinated',
                                   ),
                                 ]),
                               ),
                               Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
                                 child: Column(children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                      'images/marinated.jpg',
-                                    ),
-                                    radius: 40,
-                                  ),
-                                  Text(
-                                    'Marinated',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ]),
-                              ),
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Column(children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                      'images/cubesandcuts.jpg',
-                                    ),
-                                    radius: 40,
-                                  ),
-                                  Text(
-                                    'Cubes &\n Strips',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
+                                  ItemSubContainer(
+                                    img: 'images/cubesandcuts.jpg',
+                                    subCat: 'Cubes & Strips',
                                   ),
                                 ]),
                               ),
