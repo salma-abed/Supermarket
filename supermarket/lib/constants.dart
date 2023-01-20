@@ -5,3 +5,4 @@ const EdgeInsets padding = EdgeInsets.symmetric(
   vertical: 16,
   horizontal: 16,
 );
+
