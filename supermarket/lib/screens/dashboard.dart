@@ -40,19 +40,21 @@ class _DashBoardState extends State<DashBoard> {
     return Scaffold(
 
       
-
+      
       appBar: AppBar(
         title: Center(child: const Text('Sofa Market')),
                 actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.email),
             onPressed: () {context.go('/Contact');
-  }, ), 
+  },
+  ),
   ],
       ),
-        drawer:DraweWigdet(),
+      bottomNavigationBar: NavigationBar() ,
+       // drawer:DraweWigdet(),
       
-        //bottomNavigationBar: NavigationBar(),
+
 
         body: Container(
           

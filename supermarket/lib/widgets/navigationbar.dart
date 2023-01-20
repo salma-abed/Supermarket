@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NavigationBar extends StatefulWidget {
+  const NavigationBar({super.key});
   @override
   _NavigationBarState createState() => _NavigationBarState();
 }
@@ -21,8 +22,7 @@ class _NavigationBarState extends State<NavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Bottom Navigation Bar')),
-      body: Center(child: _pageOptions.elementAt(_selectedIndex)),
+      //body: Center(child: _pageOptions.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label:('DashBoard')),
