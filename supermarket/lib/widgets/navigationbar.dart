@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class NavigationBar extends StatefulWidget {
-  const NavigationBar({super.key});
+class NavigationBarWidget extends StatefulWidget {
+  const NavigationBarWidget({super.key});
   @override
-  _NavigationBarState createState() => _NavigationBarState();
+  _NavigationBarWidgetState createState() => _NavigationBarWidgetState();
 }
-class _NavigationBarState extends State<NavigationBar> {
+class _NavigationBarWidgetState extends State<NavigationBarWidget> {
   int _selectedIndex = 0;
   static List<Widget> _pageOptions = <Widget>[
     Text('DashBoard'),
