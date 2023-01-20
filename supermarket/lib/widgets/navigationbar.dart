@@ -1,4 +1,10 @@
+// import 'dart:js';
+
+
+
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 
 class NavigationBarWidget extends StatefulWidget {
   const NavigationBarWidget({super.key});
@@ -7,11 +13,13 @@ class NavigationBarWidget extends StatefulWidget {
 }
 class _NavigationBarWidgetState extends State<NavigationBarWidget> {
   int _selectedIndex = 0;
+  
   static List<Widget> _pageOptions = <Widget>[
-    Text('DashBoard'),
+    Text('Dashboard'),
     Text('Orders History'),
     Text('account'),
   ];
+  
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -21,8 +29,10 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
-      //body: Center(child: _pageOptions.elementAt(_selectedIndex)),
+      
+      body: Center(child: _pageOptions.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label:('DashBoard')),
@@ -30,7 +40,23 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: ('account')),
         ],  
         currentIndex: _selectedIndex,   // this will be set when a new tab is tapped  
-        onTap: _onItemTapped, // new function callback on tab selection  
+        onTap:(int index) {
+    setState(() => _selectedIndex = index);
+    switch (index) {
+      case 0:
+        context.go('/Dashboard');
+        break;
+      case 1:
+        Navigator.pushNamed(context, '/page2');
+        break;
+      case 2:
+        Navigator.pushNamed(context, 'page3');
+        break;
+      // default:
+      //   Navigator.push(
+      //       context, MaterialPageRoute(builder: (_) => RouteErrorPage()));
+    }
+  }, // new function callback on tab selection  
       ),
     );											// end of the class Navigation bar page state  
   }                                               // end of the class navigation bar page stateful widget  
