@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-
 import 'package:mobileproject/screens/homepage.dart';
 import 'package:mobileproject/screens/ordershistory.dart';
 import 'package:mobileproject/screens/viewcart.dart';
@@ -34,19 +33,11 @@ class MyApp extends ConsumerWidget {
       GoRoute(
         path: "DashBoard",
         builder: (context, state) => DashBoard(),
-        // routes:[
-        //   GoRoute(path: 'contact', builder:(context, state) => ContactUsPage(), ),
-        // ]
       ),
       GoRoute(
         path: "Signup",
         builder: (context, state) => SignupPage(),
       ),
-
-      // GoRoute(
-      //   path: "Categories",
-      //   builder: (context, state) => Category(),
-      // ),
       GoRoute(
         path: "Contact",
         builder: (context, state) => ContactUsPage(),

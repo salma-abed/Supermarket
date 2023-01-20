@@ -8,9 +8,9 @@ class NavigationBar extends StatefulWidget {
 class _NavigationBarState extends State<NavigationBar> {
   int _selectedIndex = 0;
   static List<Widget> _pageOptions = <Widget>[
-    Text('Index 0: DashBoard'),
-    Text('Index 1: Past-Orders'),
-    Text('Index 2: Account'),
+    Text('DashBoard'),
+    Text('Orders History'),
+    Text('account'),
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -26,8 +26,8 @@ class _NavigationBarState extends State<NavigationBar> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label:('DashBoard')),
-          BottomNavigationBarItem(icon: Icon(Icons.calendar_month), label: ('Past-Orders')),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ('Account')),
+          BottomNavigationBarItem(icon: Icon(Icons.calendar_month), label: ('Orders History')),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: ('account')),
         ],  
         currentIndex: _selectedIndex,   // this will be set when a new tab is tapped  
         onTap: _onItemTapped, // new function callback on tab selection  
