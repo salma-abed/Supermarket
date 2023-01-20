@@ -10,7 +10,7 @@ import firebase_auth
 import firebase_core
 import flutter_secure_storage_macos
 import path_provider_macos
-import shared_preferences_foundation
+import shared_preferences_macos
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   FLTFirebaseFirestorePlugin.register(with: registry.registrar(forPlugin: "FLTFirebaseFirestorePlugin"))
