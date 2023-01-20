@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ItemContainer extends StatelessWidget {
-  const ItemContainer({
+class MajorItemContainer extends StatelessWidget {
+  const MajorItemContainer({
     Key? key,
     required this.cat,
   }) : super(key: key);
@@ -14,12 +14,12 @@ class ItemContainer extends StatelessWidget {
       padding: EdgeInsets.only(left: 20, top: 10),
       child: Column(children: [
         Text(
-          textAlign: TextAlign.start,
+          textAlign: TextAlign.center,
           cat,
           style: TextStyle(
             fontSize: 30,
             color: Colors.black,
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ]),

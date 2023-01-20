@@ -18,6 +18,7 @@ import 'package:no_glow_scroll/no_glow_scroll.dart';
 import '../widgets/dashboard_subcat_container_widget.dart';
 import '../widgets/default_form_field.dart';
 import '../widgets/drawer_widget.dart';
+import '../widgets/major_dashboard_container.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({super.key});
@@ -59,7 +60,7 @@ class _DashBoardState extends State<DashBoard> {
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ItemContainer(cat: 'Welcome username'),
+            MajorItemContainer(cat: 'Welcome user'),
             Padding(
               padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
               child: Container(
@@ -91,20 +92,12 @@ class _DashBoardState extends State<DashBoard> {
               child: NoGlowScroll(
                 child: ListView(
                   children: [
+                    ItemContainer(cat: 'Butchery'),
                     Container(
-                      padding: EdgeInsets.only(left: 20, top: 5),
-                      child: Text('Butchery',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 30,
-                              fontWeight: FontWeight.w400)),
-                    ),
-                    defaultContainer(
-                      H: 150,
-                      W: MediaQuery.of(context).size.width,
-                      Margin: EdgeInsets.all(20),
-                      Padding: EdgeInsets.all(10),
+                      height: 150,
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.all(20),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           color: Color.fromARGB(255, 173, 205, 233)
                               .withOpacity(0.55),
