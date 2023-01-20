@@ -10,10 +10,12 @@ import 'package:go_router/go_router.dart';
 import 'package:mobileproject/screens/categries.dart';
 import 'package:mobileproject/screens/contactus.dart';
 import 'package:mobileproject/screens/loading.dart';
+import 'package:mobileproject/widgets/dashboard_cat_container_widget.dart';
 import 'package:mobileproject/widgets/default_container.dart';
 import 'package:mobileproject/widgets/input.dart';
 import 'package:mobileproject/widgets/navigationbar.dart';
 import 'package:no_glow_scroll/no_glow_scroll.dart';
+import '../widgets/dashboard_subcat_container_widget.dart';
 import '../widgets/default_form_field.dart';
 import '../widgets/drawer_widget.dart';
 
@@ -126,69 +128,33 @@ class _DashBoardState extends State<DashBoard> {
                               Container(
                                 padding: EdgeInsets.symmetric(horizontal: 10),
                                 child: Column(children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                      'images/filletsmeat.jpg',
-                                    ),
-                                    radius: 40,
-                                  ),
-                                  Text(
-                                    'Fillets',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                  ),
+                                  ItemSubContainer(
+                                      img: 'images/filletsmeat.jpg',
+                                      subCat: 'Fillets')
                                 ]),
                               ),
                               Container(
                                 padding: EdgeInsets.symmetric(horizontal: 10),
                                 child: Column(children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                      'images/filletsmeat.jpg',
-                                    ),
-                                    radius: 40,
-                                  ),
-                                  Text(
-                                    'Fillets',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                  ),
+                                  ItemSubContainer(
+                                      img: 'images/filletsmeat.jpg',
+                                      subCat: 'Fillets')
                                 ]),
                               ),
                               Container(
                                 padding: EdgeInsets.symmetric(horizontal: 10),
                                 child: Column(children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                      'images/marinated.jpg',
-                                    ),
-                                    radius: 40,
-                                  ),
-                                  Text(
-                                    'Marinated',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                  ),
+                                  ItemSubContainer(
+                                      img: 'images/marinated.jpg',
+                                      subCat: 'Marinated'),
                                 ]),
                               ),
                               Container(
                                 padding: EdgeInsets.symmetric(horizontal: 10),
                                 child: Column(children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                      'images/cubesandcuts.jpg',
-                                    ),
-                                    radius: 40,
-                                  ),
-                                  Text(
-                                    'Cubes &\n Strips',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                  ),
+                                  ItemSubContainer(
+                                      img: 'images/cubesandcuts.jpg',
+                                      subCat: ''),
                                 ]),
                               ),
                             ],
@@ -196,15 +162,7 @@ class _DashBoardState extends State<DashBoard> {
                         ],
                       ),
                     ),
-                    Container(
-                      padding: EdgeInsets.only(left: 20, top: 10),
-                      child: Text('Fruits & Veggis',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 30,
-                              fontWeight: FontWeight.w400)),
-                    ),
+                    ItemContainer(cat: 'Fruits & Veggies'),
                     Container(
                       height: 150,
                       width: MediaQuery.of(context).size.width,
@@ -219,53 +177,20 @@ class _DashBoardState extends State<DashBoard> {
                           borderRadius: BorderRadius.all(Radius.circular(30))),
                       child: Row(
                         children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            child: Column(children: [
-                              CircleAvatar(
-                                backgroundImage: AssetImage(
-                                  'images/filletsmeat.jpg',
-                                ),
-                                radius: 40,
-                              ),
-                              Text(
-                                'Fillets',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ]),
+                          ItemSubContainer(
+                              img: 'images/filletsmeat.jpg', subCat: 'Fillets'),
+                          ItemSubContainer(
+                            img: 'images/marinated.jpg',
+                            subCat: 'Marinated',
                           ),
-                          ItemContainer(),
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            child: Column(children: [
-                              CircleAvatar(
-                                backgroundImage: AssetImage(
-                                  'images/cubesandcuts.jpg',
-                                ),
-                                radius: 40,
-                              ),
-                              Text(
-                                'Cubes &\n Strips',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ]),
+                          ItemSubContainer(
+                            img: 'images/cubesandcuts.jpg',
+                            subCat: 'Cubes & \n Strips',
                           ),
                         ],
                       ),
                     ),
-                    Container(
-                      padding: EdgeInsets.only(left: 20, top: 10),
-                      child: Text('Bakery',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 30,
-                              fontWeight: FontWeight.w400)),
-                    ),
+                    ItemContainer(cat: 'Bakery'),
                     Container(
                       height: 150,
                       width: MediaQuery.of(context).size.width,
@@ -284,53 +209,28 @@ class _DashBoardState extends State<DashBoard> {
                           Row(
                             children: [
                               Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
                                 child: Column(children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                      'images/filletsmeat.jpg',
-                                    ),
-                                    radius: 40,
-                                  ),
-                                  Text(
-                                    'Fillets',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
+                                  ItemSubContainer(
+                                      img: 'images/filletsmeat.jpg',
+                                      subCat: 'Fillets'),
+                                ]),
+                              ),
+                              Container(
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                child: Column(children: [
+                                  ItemSubContainer(
+                                    img: 'images/marinated.jpg',
+                                    subCat: 'Marinated',
                                   ),
                                 ]),
                               ),
                               Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
                                 child: Column(children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                      'images/marinated.jpg',
-                                    ),
-                                    radius: 40,
-                                  ),
-                                  Text(
-                                    'Marinated',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ]),
-                              ),
-                              Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10),
-                                child: Column(children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                      'images/cubesandcuts.jpg',
-                                    ),
-                                    radius: 40,
-                                  ),
-                                  Text(
-                                    'Cubes &\n Strips',
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                    ),
+                                  ItemSubContainer(
+                                    img: 'images/cubesandcuts.jpg',
+                                    subCat: 'Cubes & \n Strips',
                                   ),
                                 ]),
                               ),
@@ -427,32 +327,5 @@ class _DashBoardState extends State<DashBoard> {
             ),
           ],
         )));
-  }
-}
-
-class ItemContainer extends StatelessWidget {
-  const ItemContainer({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
-      child: Column(children: [
-        CircleAvatar(
-          backgroundImage: AssetImage(
-            'images/marinated.jpg',
-          ),
-          radius: 40,
-        ),
-        Text(
-          'Marinated',
-          style: TextStyle(
-            fontSize: 20,
-          ),
-        ),
-      ]),
-    );
   }
 }
