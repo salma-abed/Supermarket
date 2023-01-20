@@ -19,6 +19,7 @@ import '../widgets/dashboard_subcat_container_widget.dart';
 import '../widgets/default_form_field.dart';
 import '../widgets/drawer_widget.dart';
 import '../widgets/major_dashboard_container.dart';
+import '../widgets/search_widget.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({super.key});
@@ -61,33 +62,7 @@ class _DashBoardState extends State<DashBoard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             MajorItemContainer(cat: 'Welcome user'),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
-              child: Container(
-                margin: EdgeInsets.only(left: 20, right: 20),
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: defaultFormField(
-                    validate: (value) {
-                      if (value!.isEmpty) {
-                        return '  ';
-                      }
-                      return null;
-                    },
-                    controller: _searchController,
-                    type: TextInputType.name,
-                    prefix: Icons.search,
-                    hint: 'Search products here',
-                    hintstyle: TextStyle(fontWeight: FontWeight.w800),
-                    contentpadding: EdgeInsets.only(left: 10),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.transparent),
-                    )),
-              ),
-            ),
+            SearchWidget(searchController: _searchController),
             Expanded(
               child: NoGlowScroll(
                 child: ListView(
