@@ -4,7 +4,7 @@
 // import 'package:application/widgets/navigation/navigation.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../constants/app_constants.dart';
 import '../../../models/card_models.dart';
 import '../../../widgets/card_widget.dart';
 import '../../../widgets/default_text_filed.dart';
