@@ -7,9 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mobileproject/models/products_model.dart';
 import 'package:mobileproject/screens/categries.dart';
 import 'package:mobileproject/screens/contactus.dart';
 import 'package:mobileproject/screens/loading.dart';
+import 'package:mobileproject/serivces/api_handler.dart';
 import 'package:mobileproject/widgets/dashboard_cat_container_widget.dart';
 import 'package:mobileproject/widgets/default_container.dart';
 import 'package:mobileproject/widgets/input.dart';
@@ -31,6 +33,7 @@ class DashBoard extends StatefulWidget {
 class _DashBoardState extends State<DashBoard> {
   //final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController _searchController = TextEditingController();
+  List<ProductsModel> productsList = [];
 //   Future<String> getUsername() async {
 //   //Get the current user
 //   //var user = await Firebase.auth().currentUser;
@@ -275,5 +278,15 @@ class _DashBoardState extends State<DashBoard> {
             ),
           ],
         )));
+  }
+
+  void didChangeDependencies() {
+    getProducts();
+    super.didChangeDependencies();
+    // APIHandler.getAllProducts();
+  }
+
+  Future<void> getProducts() async {
+    productsList = await APIHandler.getAllProducts();
   }
 }
