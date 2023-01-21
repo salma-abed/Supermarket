@@ -48,6 +48,7 @@ dependencies:
   flutter_secure_storage: ^7.0.1
   no_glow_scroll: ^0.0.2
   settings_ui: ^2.0.2
+  
 
 dev_dependencies:
   flutter_test:
