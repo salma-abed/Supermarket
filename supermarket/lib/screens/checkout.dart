@@ -7,8 +7,8 @@ class CheckoutPage extends StatefulWidget {
 
 class _CheckoutPageState extends State<CheckoutPage> {
 
-  String? _name;
-  String? _address;
+  // String? _name;
+  // String? _address;
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +25,17 @@ class _CheckoutPageState extends State<CheckoutPage> {
 
             Padding(padding: EdgeInsets.all(20),),
 
-            TextField(
-              decoration: InputDecoration(labelText: 'Name'),
-              onChanged: (String value) { setState(() => _name = value); },
-            ),
+            // TextField(
+            //   decoration: InputDecoration(labelText: 'Name'),
+            //   onChanged: (String value) { setState(() => _name = value); },
+            // ),
 
             Padding(padding: EdgeInsets.all(10)),
 
-            TextField(
-              decoration: InputDecoration(labelText:'Address'),
-              onChanged:(String value) { setState(() => _address = value); },  
-            ),
+            // TextField(
+            //   decoration: InputDecoration(labelText:'Address'),
+            //   onChanged:(String value) { setState(() => _address = value); },  
+            // ),
 
             Padding (padding :EdgeInsets.all (10)),
 

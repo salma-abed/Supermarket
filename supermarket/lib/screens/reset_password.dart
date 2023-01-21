@@ -14,7 +14,7 @@ class _PasswordResetState extends State<PasswordReset> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-  // bool _isObscure = true;
+  bool _isObscure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
