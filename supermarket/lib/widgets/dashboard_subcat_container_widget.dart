@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../models/products_model.dart';
-import '../serivces/api_handler.dart';
 
 class ItemSubContainer extends StatefulWidget {
   ItemSubContainer({
@@ -18,16 +17,6 @@ class ItemSubContainer extends StatefulWidget {
 }
 
 class _ItemSubContainerState extends State<ItemSubContainer> {
-  void didChangeDependencies() {
-    getProducts();
-    super.didChangeDependencies();
-    // APIHandler.getAllProducts();
-  }
-
-  Future<void> getProducts() async {
-    productsList = await APIHandler.getAllProducts();
-  }
-
   List<ProductsModel> productsList = [];
 
   final String title = '';
