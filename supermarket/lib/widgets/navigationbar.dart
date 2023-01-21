@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-// import 'package:go_router/go_router.dart';
+
 
 class NavigationBarWidget extends StatefulWidget {
   const NavigationBarWidget({super.key});
@@ -18,6 +18,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
     Text('Orders History'),
     Text('account'),
   ];
+
 
   void _onItemTapped(int index) {
     setState(() {
@@ -37,7 +38,7 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: ('account')),
         ],
         currentIndex:
-            _selectedIndex, // this will be set when a new tab is tapped
+            _selectedIndex, 
         onTap: (int index) {
           setState(() => _selectedIndex = index);
           switch (index) {
@@ -45,16 +46,13 @@ class _NavigationBarWidgetState extends State<NavigationBarWidget> {
               context.go('/Dashboard');
               break;
             case 1:
-              // Navigator.pushNamed(context, '/page2');
+              Navigator.pushNamed(context, '/Orders History');
               break;
             case 2:
-              // Navigator.pushNamed(context, 'page3');
+              Navigator.pushNamed(context, 'account');
               break;
-            // default:
-            //   Navigator.push(
-            //       context, MaterialPageRoute(builder: (_) => RouteErrorPage()));
           }
-        }, // new function callback on tab selection
+        }, 
       ),
     ); // end of the class Navigation bar page state
   } // end of the class navigation bar page stateful widget

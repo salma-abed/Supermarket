@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../constants/app_constants.dart';
 import '../models/card_models.dart';
 import 'default_text_filed.dart';
 

@@ -4,7 +4,7 @@
 // import 'package:application/widgets/navigation/navigation.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../constants/app_constants.dart';
 import '../../../models/card_models.dart';
 import '../../../widgets/card_widget.dart';
 import '../../../widgets/default_text_filed.dart';
@@ -121,14 +121,14 @@ class UsersEditingView extends StatefulWidget {
 }
 
 class _UsersEditingViewState extends State<UsersEditingView> {
-  var _formKey = GlobalKey<FormState>();
-  TextEditingController _emailEditingController = TextEditingController();
+  // var _formKey = GlobalKey<FormState>();
+  // TextEditingController _emailEditingController = TextEditingController();
 
-  TextEditingController _passwordEditingController = TextEditingController();
-  TextEditingController _phonenumberEditingController = TextEditingController();
+  // TextEditingController _passwordEditingController = TextEditingController();
+  // TextEditingController _phonenumberEditingController = TextEditingController();
 
-  TextEditingController _firstnameEditingController = TextEditingController();
-  TextEditingController _lastnameEditingController = TextEditingController();
+  // TextEditingController _firstnameEditingController = TextEditingController();
+  // TextEditingController _lastnameEditingController = TextEditingController();
   final List<CardModel> users = [
     CardModel(
       title: 'Mohamed Mounir',
